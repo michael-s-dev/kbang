@@ -1,0 +1,11 @@
+K 10
+svn:ignore
+V 19
+moc_*.cpp
+Makefile
+
+K 13
+svn:mergeinfo
+V 38
+/branches/macjariel/src/common:124-136
+END

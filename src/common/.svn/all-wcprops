@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/common
+END
+util.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/common/util.cpp
+END
+gameenums.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/common/gameenums.cpp
+END
+util.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/common/util.h
+END
+config.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/common/config.cpp
+END
+gameenums.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/common/gameenums.h
+END
+config.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/common/config.h
+END

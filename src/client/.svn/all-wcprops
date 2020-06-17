@@ -1,0 +1,539 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/209/branches/kbang-SpectreGadget/src/client
+END
+opponentwidget.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/opponentwidget.h
+END
+mainwindow.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/209/branches/kbang-SpectreGadget/src/client/mainwindow.cpp
+END
+gamesyncevent.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/gamesyncevent.h
+END
+gameeventhandler.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/gameeventhandler.h
+END
+joingamedialog.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/joingamedialog.h
+END
+cardpocket.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/cardpocket.cpp
+END
+lifepointschangeevent.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/lifepointschangeevent.cpp
+END
+gamemessageevent.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/gamemessageevent.h
+END
+cardzoomwidget.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/cardzoomwidget.h
+END
+graveyardwidget.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/graveyardwidget.cpp
+END
+chatwidget.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/209/branches/kbang-SpectreGadget/src/client/chatwidget.h
+END
+playerdiedevent.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/playerdiedevent.h
+END
+newserverdialog.ui
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/newserverdialog.ui
+END
+serverconnection.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/serverconnection.h
+END
+common.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/209/branches/kbang-SpectreGadget/src/client/common.h
+END
+characterwidget.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/209/branches/kbang-SpectreGadget/src/client/characterwidget.cpp
+END
+opponentwidget.ui
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/opponentwidget.ui
+END
+cardwidgetsizemanager.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/cardwidgetsizemanager.cpp
+END
+opponentwidget.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/opponentwidget.cpp
+END
+localplayerwidget.ui
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/209/branches/kbang-SpectreGadget/src/client/localplayerwidget.ui
+END
+gameactionmanager.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/gameactionmanager.h
+END
+gameloop.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/gameloop.h
+END
+gamesyncevent.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/gamesyncevent.cpp
+END
+connecttoserverdialog.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/connecttoserverdialog.h
+END
+cardlistwidget.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/cardlistwidget.cpp
+END
+game.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/209/branches/kbang-SpectreGadget/src/client/game.cpp
+END
+gameevent.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/gameevent.cpp
+END
+selectplayericonwidget.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/selectplayericonwidget.h
+END
+gamemessageevent.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/209/branches/kbang-SpectreGadget/src/client/gamemessageevent.cpp
+END
+cardzoomwidget.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/cardzoomwidget.cpp
+END
+cardpocket.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/cardpocket.h
+END
+playerdiedevent.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/playerdiedevent.cpp
+END
+serverconnection.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/serverconnection.cpp
+END
+cardpilewidget.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/cardpilewidget.cpp
+END
+common.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/209/branches/kbang-SpectreGadget/src/client/common.cpp
+END
+gamecontextchangeevent.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/gamecontextchangeevent.h
+END
+cardmovementevent.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/cardmovementevent.h
+END
+aboutdialog.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/aboutdialog.h
+END
+gameactionmanager.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/209/branches/kbang-SpectreGadget/src/client/gameactionmanager.cpp
+END
+cardactionswidget.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/cardactionswidget.h
+END
+cardwidgetfactory.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/cardwidgetfactory.cpp
+END
+newserverdialog.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/newserverdialog.h
+END
+playerwidget.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/playerwidget.h
+END
+mainwindow.ui
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/209/branches/kbang-SpectreGadget/src/client/mainwindow.ui
+END
+cardwidgetsizemanager.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/cardwidgetsizemanager.h
+END
+card.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/209/branches/kbang-SpectreGadget/src/client/card.cpp
+END
+localplayerwidget.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/localplayerwidget.cpp
+END
+creategamedialog.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/creategamedialog.cpp
+END
+cardwidget.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/cardwidget.cpp
+END
+chatwidget.ui
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/209/branches/kbang-SpectreGadget/src/client/chatwidget.ui
+END
+cardlistwidget.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/cardlistwidget.h
+END
+game.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/209/branches/kbang-SpectreGadget/src/client/game.h
+END
+gameevent.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/gameevent.h
+END
+gameeventqueue.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/gameeventqueue.h
+END
+logwidget.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/209/branches/kbang-SpectreGadget/src/client/logwidget.cpp
+END
+aboutdialog.ui
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/aboutdialog.ui
+END
+cardmovementevent.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/cardmovementevent.cpp
+END
+gamecontextchangeevent.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/gamecontextchangeevent.cpp
+END
+aboutdialog.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/aboutdialog.cpp
+END
+cardpilewidget.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/cardpilewidget.h
+END
+connecttoserverdialog.ui
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/connecttoserverdialog.ui
+END
+cardactionswidget.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/cardactionswidget.cpp
+END
+playerwidget.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/209/branches/kbang-SpectreGadget/src/client/playerwidget.cpp
+END
+newserverdialog.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/newserverdialog.cpp
+END
+playerevent.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/playerevent.h
+END
+creategamedialog.ui
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/creategamedialog.ui
+END
+gameeventhandler.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/gameeventhandler.cpp
+END
+joingamedialog.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/209/branches/kbang-SpectreGadget/src/client/joingamedialog.cpp
+END
+cardwidgetfactory.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/cardwidgetfactory.h
+END
+card.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/card.h
+END
+deckwidget.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/deckwidget.h
+END
+logwidget.ui
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/209/branches/kbang-SpectreGadget/src/client/logwidget.ui
+END
+localplayerwidget.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/localplayerwidget.h
+END
+gameeventqueue.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/209/branches/kbang-SpectreGadget/src/client/gameeventqueue.cpp
+END
+mainwindow.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/209/branches/kbang-SpectreGadget/src/client/mainwindow.h
+END
+cardwidget.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/cardwidget.h
+END
+creategamedialog.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/creategamedialog.h
+END
+chatwidget.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/209/branches/kbang-SpectreGadget/src/client/chatwidget.cpp
+END
+main.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/main.cpp
+END
+lifepointschangeevent.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/lifepointschangeevent.h
+END
+logwidget.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/209/branches/kbang-SpectreGadget/src/client/logwidget.h
+END
+graveyardwidget.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/graveyardwidget.h
+END
+playerevent.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/playerevent.cpp
+END
+connecttoserverdialog.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/connecttoserverdialog.cpp
+END
+gameloop.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/gameloop.cpp
+END
+joingamedialog.ui
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/209/branches/kbang-SpectreGadget/src/client/joingamedialog.ui
+END
+characterwidget.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/characterwidget.h
+END
+selectplayericonwidget.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/selectplayericonwidget.cpp
+END
+deckwidget.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/client/deckwidget.cpp
+END

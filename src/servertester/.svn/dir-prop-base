@@ -1,0 +1,14 @@
+K 10
+svn:ignore
+V 40
+moc_*.cpp
+ui_*.h
+Makefile
+servertester
+
+
+K 13
+svn:mergeinfo
+V 44
+/branches/macjariel/src/servertester:124-136
+END

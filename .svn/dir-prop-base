@@ -1,0 +1,18 @@
+K 10
+svn:ignore
+V 67
+rccs
+mocs
+uics
+lib
+obj
+doxygen
+Makefile*
+kbang-client
+kbang-server
+
+K 13
+svn:mergeinfo
+V 34
+/branches/macjariel:71-122,124-136
+END

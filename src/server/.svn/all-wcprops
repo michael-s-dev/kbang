@@ -1,0 +1,671 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server
+END
+cardhorse.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/cardhorse.cpp
+END
+characterpropertychange.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/characterpropertychange.h
+END
+voidai.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/voidai.h
+END
+gameexceptions.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/gameexceptions.h
+END
+tablecard.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/tablecard.cpp
+END
+characterblackjack.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/characterblackjack.cpp
+END
+privateplayerview.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/privateplayerview.cpp
+END
+tcpserver.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/tcpserver.h
+END
+charactervulturesam.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/charactervulturesam.cpp
+END
+characterpedroramirez.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/characterpedroramirez.h
+END
+gameeventlistener.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/gameeventlistener.h
+END
+gametable.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/gametable.h
+END
+cardduel.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/cardduel.h
+END
+charactersuzylafayette.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/charactersuzylafayette.h
+END
+playerreaper.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/playerreaper.h
+END
+carddynamite.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/carddynamite.cpp
+END
+gameeventmanager.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/gameeventmanager.cpp
+END
+cardbarrel.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/cardbarrel.h
+END
+characterpropertychange.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/characterpropertychange.cpp
+END
+reactionhandler.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/reactionhandler.h
+END
+publicgameview.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/publicgameview.h
+END
+voidai.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/voidai.cpp
+END
+characterjourdonnais.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/characterjourdonnais.h
+END
+tcpserver.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/tcpserver.cpp
+END
+client.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/client.cpp
+END
+cardhorse.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/cardhorse.h
+END
+gametable.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/gametable.cpp
+END
+gameeventlistener.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/gameeventlistener.cpp
+END
+charactersidketchum.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/charactersidketchum.h
+END
+cardduel.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/cardduel.cpp
+END
+characterkitcarlson.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/characterkitcarlson.cpp
+END
+publicplayerview.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/publicplayerview.cpp
+END
+playerctrl.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/playerctrl.h
+END
+privateplayerview.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/privateplayerview.h
+END
+characterblackjack.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/characterblackjack.h
+END
+characterlist.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/characterlist.cpp
+END
+weaponcard.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/weaponcard.h
+END
+charactervulturesam.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/charactervulturesam.h
+END
+gameinfo.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/gameinfo.h
+END
+characterjessejones.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/characterjessejones.h
+END
+playerreaper.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/playerreaper.cpp
+END
+player.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/player.cpp
+END
+characterbase.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/characterbase.h
+END
+reactioncard.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/reactioncard.cpp
+END
+cardtaker.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/cardtaker.cpp
+END
+cardbarrel.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/cardbarrel.cpp
+END
+publicgameview.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/publicgameview.cpp
+END
+cardmultishoot.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/cardmultishoot.h
+END
+checkdeckresulthandler.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/checkdeckresulthandler.h
+END
+consolecommand.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/consolecommand.h
+END
+carddynamite.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/carddynamite.h
+END
+gameeventmanager.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/gameeventmanager.h
+END
+cardbeer.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/cardbeer.h
+END
+charactersidketchum.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/charactersidketchum.cpp
+END
+cardjail.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/cardjail.h
+END
+cardmissed.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/cardmissed.cpp
+END
+playerctrl.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/playerctrl.cpp
+END
+charactercassidygringo.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/charactercassidygringo.cpp
+END
+characterluckyduke.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/characterluckyduke.h
+END
+weaponcard.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/weaponcard.cpp
+END
+client.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/client.h
+END
+main.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/main.cpp
+END
+cardgeneralstore.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/cardgeneralstore.cpp
+END
+characterjessejones.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/characterjessejones.cpp
+END
+gameinfo.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/gameinfo.cpp
+END
+characterbase.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/characterbase.cpp
+END
+common.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/common.cpp
+END
+cardplayable.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/cardplayable.h
+END
+publicplayerview.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/publicplayerview.h
+END
+characterkitcarlson.h
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/characterkitcarlson.h
+END
+characterlist.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/characterlist.h
+END
+gamecycle.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/gamecycle.h
+END
+gameserver.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/gameserver.cpp
+END
+consolecommand.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/consolecommand.cpp
+END
+checkdeckresulthandler.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/checkdeckresulthandler.cpp
+END
+cardmultishoot.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/cardmultishoot.cpp
+END
+player.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/player.h
+END
+playingcard.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/playingcard.h
+END
+console.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/console.cpp
+END
+charactercalamityjanet.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/charactercalamityjanet.cpp
+END
+reactioncard.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/reactioncard.h
+END
+carddrawcards.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/carddrawcards.cpp
+END
+cardtaker.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/cardtaker.h
+END
+cardbang.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/cardbang.h
+END
+cardfactory.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/cardfactory.h
+END
+cardbeer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/cardbeer.cpp
+END
+cardjail.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/cardjail.cpp
+END
+characterluckyduke.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/characterluckyduke.cpp
+END
+gamelogger.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/gamelogger.h
+END
+game.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/game.h
+END
+characterpedroramirez.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/characterpedroramirez.cpp
+END
+cardplayable.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/cardplayable.cpp
+END
+cardmissed.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/cardmissed.h
+END
+tablecard.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/tablecard.h
+END
+charactersuzylafayette.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/charactersuzylafayette.cpp
+END
+charactercassidygringo.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/charactercassidygringo.h
+END
+gamecycle.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/gamecycle.cpp
+END
+cardgeneralstore.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/cardgeneralstore.h
+END
+playingcard.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/playingcard.cpp
+END
+common.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/common.h
+END
+cardfactory.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/cardfactory.cpp
+END
+cards.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/cards.h
+END
+cardbang.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/cardbang.cpp
+END
+reactionhandler.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/reactionhandler.cpp
+END
+gameserver.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/gameserver.h
+END
+charactercalamityjanet.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/charactercalamityjanet.h
+END
+console.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/console.h
+END
+characterjourdonnais.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/characterjourdonnais.cpp
+END
+carddrawcards.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/carddrawcards.h
+END
+game.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/game.cpp
+END
+gamelogger.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/server/gamelogger.cpp
+END

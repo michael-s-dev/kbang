@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/common/parser
+END
+queryresult.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/common/parser/queryresult.h
+END
+ioproxy.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/common/parser/ioproxy.cpp
+END
+parserstructs.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/common/parser/parserstructs.h
+END
+queryget.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/common/parser/queryget.h
+END
+xmlnode.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/common/parser/xmlnode.h
+END
+parser.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/common/parser/parser.cpp
+END
+ioproxy.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/common/parser/ioproxy.h
+END
+parser.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/common/parser/parser.h
+END
+parserstructs.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/common/parser/parserstructs.cpp
+END
+queryresult.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/common/parser/queryresult.cpp
+END
+queryget.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/common/parser/queryget.cpp
+END
+xmlnode.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/common/parser/xmlnode.cpp
+END

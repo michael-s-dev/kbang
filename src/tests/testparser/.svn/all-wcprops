@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/tests/testparser
+END
+testparser.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/tests/testparser/testparser.cpp
+END
+testparser.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/tests/testparser/testparser.h
+END
+mocksocket.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/tests/testparser/mocksocket.cpp
+END
+mocksocket.h
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/tests/testparser/mocksocket.h
+END
+testparser.pro
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/208/branches/kbang-SpectreGadget/src/tests/testparser/testparser.pro
+END

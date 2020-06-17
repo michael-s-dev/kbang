@@ -1,0 +1,12 @@
+K 10
+svn:ignore
+V 26
+moc_*.cpp
+Makefile
+server
+
+K 13
+svn:mergeinfo
+V 38
+/branches/macjariel/src/server:124-136
+END
