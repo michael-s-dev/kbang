@@ -50,7 +50,7 @@ void CardTaker::play( PlayingCard* targetCard , Player* targetPlayer ){
       // State check
       gameCycle()->assertTurn();
       assertInHand();
-      if (owner() == targetPlayer)
+      if (owner() == targetPlayer || targetPlayer->isAlive() == false )
           throw BadTargetPlayerException();
       if (targetPlayer->hasIdenticalCardOnTable(targetCard)) {
           throw TwoSameOnTableException();
@@ -70,8 +70,11 @@ void CardTaker::play( PlayingCard* targetCard , Player* targetPlayer ){
 }
 
 void CardTaker::play( PlayingCard* targetCard , PlayingCard* targetCard2 ){
+    if (m_type == Gift){ play( targetCard , targetCard2->owner()); }
+    else{
     m_targetCard = targetCard;
     play(targetCard2);
+    }
 }
 
 
