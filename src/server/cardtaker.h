@@ -2,9 +2,9 @@
 #define CARDTAKER_H
 
 #include "playingcard.h"
-#include "tablecard.h"
+#include "playingcard.h"
 
-class CardTaker : public TableCard
+class CardTaker : public PlayingCard
 {
 public:
     enum Type {

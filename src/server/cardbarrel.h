@@ -1,11 +1,11 @@
 #ifndef CARDBARREL_H
 #define CARDBARREL_H
 
-#include "tablecard.h"
+#include "playingcard.h"
 
 class CheckDeckResultHandler;
 
-class CardBarrel : public TableCard
+class CardBarrel : public PlayingCard
 {
 Q_OBJECT;
 public:

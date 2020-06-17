@@ -5,7 +5,7 @@
 #include "gameeventmanager.h"
 #include "gameexceptions.h"
 #include "game.h"
-#include "tablecard.h"
+#include "playingcard.h"
 #include "cardfactory.h"
 #include "checkdeckresulthandler.h"
 
@@ -104,10 +104,10 @@ void GameTable::playerPlayCard(PlayingCard* card, PlayingCard* targetCard)
     owner->checkEmptyHand();
 }
 
-void GameTable::playerPlayCardOnTable(TableCard* card, Player* targetPlayer)
+void GameTable::playerPlayCardOnTable(PlayingCard* card, Player* targetPlayer)
 {
     if (card->isVirtual())
-        card = qobject_cast<TableCard*>(card->master());
+        card = qobject_cast<PlayingCard*>(card->master());
     Q_ASSERT(card != 0);
     Q_ASSERT(card->pocket() == POCKET_HAND);
     Player* owner = card->owner();
@@ -126,11 +126,11 @@ void GameTable::playerPlayCardOnTable(TableCard* card, Player* targetPlayer)
     owner->checkEmptyHand();
 }
 
-void GameTable::passTableCard(TableCard* card, Player* targetPlayer)
+void GameTable::passTableCard(PlayingCard* card, Player* targetPlayer)
 {
     Q_ASSERT(card->pocket() == POCKET_TABLE);
     if (card->isVirtual())
-        card = qobject_cast<TableCard*>(card->master());
+        card = qobject_cast<PlayingCard*>(card->master());
     Q_ASSERT(card != 0);
     Player* owner = card->owner();
 
@@ -248,7 +248,7 @@ void GameTable::playerStealCard(Player* player, PlayingCard* card)
         break;
     case POCKET_TABLE:
         owner->removeCardFromTable(card);
-        (qobject_cast<TableCard*>(card))->unregisterPlayer(owner);
+        (qobject_cast<PlayingCard*>(card))->unregisterPlayer(owner);
         break;
     default:
         NOT_REACHED();
@@ -344,7 +344,7 @@ void GameTable::moveCardToGraveyard(PlayingCard* card)
         break;
     case POCKET_TABLE:
         owner->removeCardFromTable(card);
-        (qobject_cast<TableCard*>(card))->unregisterPlayer(owner);
+        (qobject_cast<PlayingCard*>(card))->unregisterPlayer(owner);
         break;
     case POCKET_SELECTION:
         m_selection.removeAll(card);

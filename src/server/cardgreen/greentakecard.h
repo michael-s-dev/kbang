@@ -2,10 +2,10 @@
 #define GREENTAKECARD_H
 
 
-#include "tablecard.h"
+#include "playingcard.h"
 class Player;
 
-class GreenTakeCard : public TableCard
+class GreenTakeCard : public PlayingCard
 {
 Q_OBJECT;
 public:

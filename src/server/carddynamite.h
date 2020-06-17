@@ -1,10 +1,10 @@
 #ifndef CARDDYNAMITE_H
 #define CARDDYNAMITE_H
 
-#include "tablecard.h"
+#include "playingcard.h"
 #include "checkdeckresulthandler.h"
 
-class CardDynamite : public TableCard, public CheckDeckResultHandler
+class CardDynamite : public PlayingCard, public CheckDeckResultHandler
 {
 public:
     CardDynamite(Game *game, int id, CardSuit, CardRank);

@@ -6,7 +6,7 @@
 
 
 GreenBeer::GreenBeer(Game *game, int id, CardSuit suit, CardRank rank):
-        TableCard(game, id, CARD_BORRACCIA, suit, rank)
+       PlayingCard(game, id, CARD_BORRACCIA, suit, rank)
 {
 }
 

@@ -21,7 +21,7 @@
 #define REACTIONCARD_H
 
 #include "playingcard.h"
-#include "tablecard.h"
+#include "playingcard.h"
 #include "reactionhandler.h"
 #include "parser/parserstructs.h"
 
@@ -41,7 +41,7 @@
  */
 
 
-class ReactionCard: public TableCard, public ReactionHandler
+class ReactionCard: public PlayingCard, public ReactionHandler
 {
 Q_OBJECT
 public:

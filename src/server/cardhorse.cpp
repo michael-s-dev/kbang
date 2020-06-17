@@ -6,7 +6,7 @@
 
 
 CardHorse::CardHorse(Game *game, int id, CardHorse::HorseType horseType, CardSuit suit, CardRank rank):
-        TableCard(game, id, CARD_UNKNOWN, suit, rank),
+       PlayingCard(game, id, CARD_UNKNOWN, suit, rank),
         m_horseType(horseType)
 {
     switch(m_horseType) {

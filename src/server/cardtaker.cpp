@@ -8,7 +8,7 @@
 
 
 CardTaker::CardTaker(Game* game, int id, CardTaker::Type type, CardSuit cardSuit, CardRank cardRank):
-        TableCard(game, id, CARD_UNKNOWN, cardSuit, cardRank),
+       PlayingCard(game, id, CARD_UNKNOWN, cardSuit, cardRank),
         m_type(type),
         m_targetCard(0)
 {

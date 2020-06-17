@@ -25,7 +25,6 @@ HEADERS += \
     src/server/privateplayerview.h \
     src/server/playingcard.h \
     src/server/reactioncard.h \
-    src/server/tablecard.h \
     src/server/weaponcard.h \
     src/server/cardbang.h \
     src/server/cardmissed.h \
@@ -91,7 +90,6 @@ SOURCES += \
     src/server/privateplayerview.cpp \
     src/server/playingcard.cpp \
     src/server/reactioncard.cpp \
-    src/server/tablecard.cpp \
     src/server/weaponcard.cpp \
     src/server/cardbang.cpp \
     src/server/cardmissed.cpp \

@@ -2,9 +2,9 @@
 #define GREENMISSED_H
 
 
-#include "tablecard.h"
+#include "playingcard.h"
 
-class GreenMissed : public TableCard
+class GreenMissed : public PlayingCard
 {
 Q_OBJECT;
 public:

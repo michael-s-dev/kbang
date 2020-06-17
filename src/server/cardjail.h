@@ -1,10 +1,10 @@
 #ifndef CARDJAIL_H
 #define CARDJAIL_H
 
-#include "tablecard.h"
+#include "playingcard.h"
 #include "checkdeckresulthandler.h"
 
-class CardJail : public TableCard, public CheckDeckResultHandler
+class CardJail : public PlayingCard, public CheckDeckResultHandler
 {
 public:
     CardJail(Game *game, int id, CardSuit, CardRank);

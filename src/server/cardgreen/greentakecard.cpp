@@ -7,7 +7,7 @@
 
 
 GreenTakeCard::GreenTakeCard(Game *game, int id, CardSuit suit, CardRank rank , GreenTakeCard::Type type):
-        TableCard(game, id, CARD_UNKNOWN, suit, rank),
+       PlayingCard(game, id, CARD_UNKNOWN, suit, rank),
         m_type(type)
 {
     if (m_type == conestoga)

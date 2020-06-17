@@ -6,7 +6,7 @@
 
 
 GreenMissed::GreenMissed(Game *game, int id, GreenMissed::MissType missType, CardSuit suit, CardRank rank):
-        TableCard(game, id, CARD_UNKNOWN, suit, rank),
+       PlayingCard(game, id, CARD_UNKNOWN, suit, rank),
         m_missType(missType)
 {
     switch(m_missType) {

@@ -1,11 +1,11 @@
 #ifndef CARDMUSTANG_H
 #define CARDMUSTANG_H
 
-#include "tablecard.h"
+#include "playingcard.h"
 
 class Player;
 
-class CardHorse : public TableCard
+class CardHorse : public PlayingCard
 {
 Q_OBJECT;
 public:

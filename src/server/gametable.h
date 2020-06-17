@@ -51,13 +51,13 @@ public:
      * Card's owner plays a card on his (or other player's) table. If targetPlayer is
      * not NULL, the card is played on that player's table (e.g. Jail).
      */
-    void playerPlayCardOnTable(TableCard*, Player* targetPlayer = 0);
+    void playerPlayCardOnTable(PlayingCard*, Player* targetPlayer = 0);
 
     /**
      * The specified card is passed to the table of targetPlayer. The specified
      * card must be already on table. (e.g. used by Dynamite passing)
      */
-    void passTableCard(TableCard*, Player* targetPlayer);
+    void passTableCard(PlayingCard*, Player* targetPlayer);
 
     void playerPass(Player* player);
 

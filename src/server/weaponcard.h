@@ -20,14 +20,14 @@
 #ifndef WEAPONCARD_H
 #define WEAPONCARD_H
 
-#include "tablecard.h"
+#include "playingcard.h"
 #include "parser/parserstructs.h"
 
 /**
  * The WeaponCard represents any weapon card.
  * @author MacJariel <MacJariel@gmail.com>
  */
-class WeaponCard: public TableCard
+class WeaponCard: public PlayingCard
 {
 Q_OBJECT
 public:

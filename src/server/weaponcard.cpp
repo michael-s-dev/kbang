@@ -24,7 +24,7 @@
 #include "gamecycle.h"
 
 WeaponCard::WeaponCard(Game *game, int id, int range, CardSuit suit, CardRank rank):
-        TableCard(game, id, CARD_UNKNOWN, suit, rank),
+       PlayingCard(game, id, CARD_UNKNOWN, suit, rank),
         m_range(range)
 {
     switch(m_range) {

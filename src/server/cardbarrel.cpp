@@ -5,7 +5,7 @@
 #include "gameexceptions.h"
 
 CardBarrel::CardBarrel(Game *game, int id, CardSuit suit, CardRank rank):
-        TableCard(game, id, CARD_BARREL, suit, rank)
+       PlayingCard(game, id, CARD_BARREL, suit, rank)
 {
 }
 

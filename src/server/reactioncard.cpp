@@ -22,7 +22,7 @@
 #include "gametable.h"
 
 ReactionCard::ReactionCard(Game *game, int id, PlayingCardType pocket, CardSuit suit, CardRank rank):
-        TableCard(game, id, pocket , suit, rank)
+       PlayingCard(game, id, pocket , suit, rank)
 {
 }
 

@@ -6,7 +6,7 @@
 #include "player.h"
 
 CardDynamite::CardDynamite(Game *game, int id, CardSuit suit, CardRank rank):
-        TableCard(game, id, CARD_DYNAMITE, suit, rank)
+       PlayingCard(game, id, CARD_DYNAMITE, suit, rank)
 {
 }
 
