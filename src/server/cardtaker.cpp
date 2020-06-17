@@ -60,6 +60,7 @@ void CardTaker::play( PlayingCard* targetCard , Player* targetPlayer ){
       }
 
       gameTable()->playerPlayCard(this, targetCard);
+      gameTable()->passTableCard(targetCard , targetPlayer);
 
     }
     else{

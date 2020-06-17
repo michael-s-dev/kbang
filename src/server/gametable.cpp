@@ -248,7 +248,7 @@ void GameTable::playerStealCard(Player* player, PlayingCard* card)
         break;
     case POCKET_TABLE:
         owner->removeCardFromTable(card);
-        (qobject_cast<PlayingCard*>(card))->unregisterPlayer(owner);
+        card->unregisterPlayer(owner);
         break;
     default:
         NOT_REACHED();
@@ -344,7 +344,7 @@ void GameTable::moveCardToGraveyard(PlayingCard* card)
         break;
     case POCKET_TABLE:
         owner->removeCardFromTable(card);
-        (qobject_cast<PlayingCard*>(card))->unregisterPlayer(owner);
+        card->unregisterPlayer(owner);
         break;
     case POCKET_SELECTION:
         m_selection.removeAll(card);
