@@ -154,9 +154,9 @@ struct CardFactory::CardFactoryImp
         list.append(new CardTaker(game, id(), CardTaker::Panic, SUIT_HEARTS,   11));
 
         list.append(new CardTaker(game, id(), CardTaker::RagTime, SUIT_HEARTS,   9));
-        for (int i = 1; i <= 46; ++i) {
         list.append(new CardTaker(game, id(), CardTaker::Gift, SUIT_SPADES,   14));
-        }
+        list.append(new CardTaker(game, id(), CardTaker::Gift, SUIT_SPADES,   13));
+
 
         list.append(new CardTaker(game, id(), CardTaker::CatBalou, SUIT_DIAMONDS, 9 ));
         list.append(new CardTaker(game, id(), CardTaker::CatBalou, SUIT_DIAMONDS, 10));
