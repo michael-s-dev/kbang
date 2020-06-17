@@ -107,6 +107,12 @@ void GameMessageEvent::run()
                     arg(cardToString(m_gameMessage.card)).
                     arg(decoratePlayerName(targetPlayerName, 1));
         break;
+    case GAMEMESSAGE_PASSTABLECARD:
+        msg = tr("%1 move %2 to %3.").
+                    arg(decoratePlayerName(playerName)).
+                    arg(cardToString(m_gameMessage.card)).
+                    arg(decoratePlayerName(targetPlayerName, 1));
+        break;
     case GAMEMESSAGE_PLAYERCANCELCARD:
         msg = tr("%1 forced %3 to discard %2.").
                     arg(decoratePlayerName(playerName)).

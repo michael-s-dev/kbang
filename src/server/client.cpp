@@ -670,6 +670,14 @@ void Client::onPlayerPlayCardOnTable(PublicPlayerView& player, const PlayingCard
 void Client::onPassTableCard(PublicPlayerView& player, const PlayingCard* card, PublicPlayerView& targetPlayer)
 {
     if (mp_parser == 0) return;
+
+    GameMessage message;
+    message.type = GAMEMESSAGE_PASSTABLECARD;
+    message.player = player.id();
+    message.card = card->cardData();
+    message.targetPlayer = (targetPlayer.id() != mp_playerCtrl->privatePlayerView().id()) ? targetPlayer.id() : 0;
+    mp_parser->eventGameMessage(message);
+
     CardMovementData x;
     x.pocketTypeFrom = POCKET_TABLE;
     x.pocketTypeTo   = POCKET_TABLE;
