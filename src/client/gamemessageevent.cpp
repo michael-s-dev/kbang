@@ -21,9 +21,16 @@ void GameMessageEvent::run()
 {
     GameEvent::run();
     QString msg;
+    // ID of client ( never change)
+    int client_id = mp_game->playerId();
+    // Name,ID of player which play a card
     QString playerName       = m_gameMessage.player ? mp_game->playerWidget(m_gameMessage.player)->name() : "";
+    int     playerId      = m_gameMessage.player ? mp_game->playerWidget(m_gameMessage.player)->id() : 0;
     QString targetPlayerName = m_gameMessage.targetPlayer ? mp_game->playerWidget(m_gameMessage.targetPlayer)->name() : "";
     QString causedByName     = m_gameMessage.causedBy ? mp_game->playerWidget(m_gameMessage.causedBy)->name() : "";
+
+
+
 
     switch(m_gameMessage.type) {
     case GAMEMESSAGE_GAMESTARTED:
@@ -33,9 +40,13 @@ void GameMessageEvent::run()
         break;
     case GAMEMESSAGE_GAMEFINISHED:
         mp_game->setGameState(GAMESTATE_FINISHED);
+
         msg = tr("The game has finished.");
         break;
     case GAMEMESSAGE_PLAYERDRAWFROMDECK:
+        if ( client_id == playerId  )
+        QSound::play(Config::dataPathString() + "sounds/drawacard.wav");
+
         msg = tr("%1 drew %2 from the deck.").
                     arg(decoratePlayerName(playerName)).
                     arg(cardListWidgetToString(m_gameMessage.cards));
@@ -51,15 +62,30 @@ void GameMessageEvent::run()
                     arg(cardToString(m_gameMessage.card));
         break;
     case GAMEMESSAGE_PLAYERPLAYCARD:
-
         if (m_gameMessage.card.type == CARD_BEER || m_gameMessage.card.type == CARD_SALOON || m_gameMessage.card.type == CARD_TEQUILA ||
                 m_gameMessage.card.type == CARD_WHISKY )
-              QSound::play(Config::dataPathString() + "sounds/beer.wav");
+            QSound::play(Config::dataPathString() + "sounds/beer.wav");
+        if (m_gameMessage.card.type == CARD_APPALOSSA || m_gameMessage.card.type == CARD_MUSTANG )
+            QSound::play(Config::dataPathString() + "sounds/horseplayed.wav");
+        if (m_gameMessage.card.type == CARD_VOLCANIC||
+            m_gameMessage.card.type == CARD_DEAGLE  ||
+            m_gameMessage.card.type == CARD_SCHOFIELD||
+            m_gameMessage.card.type == CARD_REMINGTON||
+            m_gameMessage.card.type == CARD_CARABINE||
+            m_gameMessage.card.type == CARD_WINCHESTER)
+             QSound::play(Config::dataPathString() + "sounds/weaponplayed.wav");
+        if (m_gameMessage.card.type == CARD_JAIL )
+            QSound::play(Config::dataPathString() + "sounds/jail.wav");
+        if (m_gameMessage.card.type == CARD_DYNAMITE )
+            QSound::play(Config::dataPathString() + "sounds/bomb.wav");
+        if (m_gameMessage.card.type == CARD_RAG_TIME )
+            QSound::play(Config::dataPathString() + "sounds/regtime.wav");
+
         if (m_gameMessage.targetCard.id) {
             msg = tr("%1 played %2 on %3%4.").
                         arg(decoratePlayerName(playerName)).
                         arg(cardToString(m_gameMessage.card)).
-                        arg(cardToString(m_gameMessage.targetCard)).
+                        arg("card").
                         arg(m_gameMessage.targetPlayer ?
                                 tr(" owned by %1").arg(decoratePlayerName(targetPlayerName, 1)) : "");
         } else if (m_gameMessage.targetPlayer && m_gameMessage.targetPlayer != m_gameMessage.player) {
@@ -74,17 +100,22 @@ void GameMessageEvent::run()
         }
         break;
     case GAMEMESSAGE_PLAYERRESPONDWITHCARD:
-        msg = tr("&nbsp;&nbsp;&nbsp;&nbsp;%1 responded with %2.").
+        if(m_gameMessage.card.type == CARD_MISSED || m_gameMessage.card.type == CARD_SCHIVATA){
+           if ( client_id == playerId )
+               QSound::play(Config::dataPathString() + "sounds/miss.wav");
+        }
+
+        msg = tr("%1 responded with %2.").
                     arg(decoratePlayerName(playerName)).
                     arg(cardToString(m_gameMessage.card));
         break;
     case GAMEMESSAGE_PLAYERPASS:
-        msg = tr("&nbsp;&nbsp;&nbsp;&nbsp;%1 did not react.").
+        msg = tr("%1 did not react.").
                     arg(decoratePlayerName(playerName));
         QSound::play(Config::dataPathString() + "sounds/noreact.wav");
         break;
     case GAMEMESSAGE_PLAYERPICKFROMSELECTION:
-        msg = tr("&nbsp;&nbsp;&nbsp;&nbsp;%1 took %2 from selection.").
+        msg = tr("%1 took %2 from selection.").
                     arg(decoratePlayerName(playerName)).
                     arg(cardToString(m_gameMessage.card));
         break;

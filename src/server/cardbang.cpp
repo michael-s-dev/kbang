@@ -61,6 +61,14 @@ CardBang::~CardBang()
 {
 }
 
+ReactionType CardBang::reactionType() const
+{
+   if (m_bangType == pugno) return REACTION_PUGNO;
+   else if (m_bangType == pugnale) return REACTION_PUGNALE;
+   else return REACTION_BANG;
+}
+
+
 // Trigger this fucntion when clicked card in hand
 void CardBang::play()
     {

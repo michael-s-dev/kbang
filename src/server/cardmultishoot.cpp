@@ -167,7 +167,9 @@ void CardMultiShoot::checkResult(bool result)
 
 ReactionType CardMultiShoot::reactionType() const
 {
-    return (m_type == Indians) ? REACTION_INDIANS : REACTION_GATLING;
+   if (m_type == Indians) return REACTION_INDIANS;
+   else if (m_type == Howitzer) return REACTION_HOWITZER;
+   else return REACTION_GATLING;
 }
 
 void CardMultiShoot::requestNext()

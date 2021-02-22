@@ -49,13 +49,13 @@ public:
     virtual void play();
     virtual void play(Player* targetPlayer);
     virtual void play(PlayingCard* targetCard , PlayingCard* targetCard2);
-    virtual void play(PlayingCard* targetCard , Player* targetPlaye);
+    virtual void play(PlayingCard* targetCard , Player* targetPlayer);
     virtual void respondPass();
     virtual void respondCard(PlayingCard* targetCard);
 
     virtual void checkResult(bool result);
 
-    virtual ReactionType reactionType() const { return REACTION_BANG; }
+    virtual ReactionType reactionType() const ;
     virtual Player* causedBy() const { return mp_attackingPlayer; }
 private:
     void missed();

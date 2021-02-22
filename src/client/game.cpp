@@ -137,6 +137,14 @@ void Game::setGameContext(const GameContextData& gameContextData)
             QSound::play(Config::dataPathString() + "sounds/colt45.wav");
             message = tr("<i>%1</i> played Bang! on you!").arg(causedByName);
             break;
+        case REACTION_PUGNO:
+            QSound::play(Config::dataPathString() + "sounds/punch.wav");
+            message = tr("<i>%1</i> played Pugno! on you!").arg(causedByName);
+            break;
+        case REACTION_PUGNALE:
+            QSound::play(Config::dataPathString() + "sounds/knife.wav");
+            message = tr("<i>%1</i> throwed a Knife! on you!").arg(causedByName);
+            break;
         case REACTION_DUEL:
             QSound::play(Config::dataPathString() + "sounds/clockchime.wav");
             message = tr("You are in duel with <i>%1</i>.").arg(causedByName);
@@ -144,6 +152,10 @@ void Game::setGameContext(const GameContextData& gameContextData)
         case REACTION_GATLING:
             QSound::play(Config::dataPathString() + "sounds/gatling.wav");
             message = tr("<i>%1</i> played Gatling.").arg(causedByName);
+            break;
+        case REACTION_HOWITZER:
+            QSound::play(Config::dataPathString() + "sounds/cannon.wav");
+            message = tr("<i>%1</i> played <b style='color:tomato'>Howitzer.</b>").arg(causedByName);
             break;
         case REACTION_GENERALSTORE:
             QSound::play(Config::dataPathString() + "sounds/cashregister.wav");
