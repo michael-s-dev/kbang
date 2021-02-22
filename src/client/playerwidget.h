@@ -71,7 +71,6 @@ public:
     inline bool         isWinner()  const { return m_isWinner;      }
     inline bool         isVoid()    const { return (m_id == 0);     }
     inline PlayerRole   role()      const { return m_playerRole;    }
-    inline QList<CardData>   table_cards()  { return m_table;}
 
     void setCurrent(bool);
     void setRequested(bool);
@@ -118,7 +117,6 @@ protected:
     bool                    m_isWinner;
     bool                    m_isCurrent;
     bool                    m_isRequested;
-    QList<CardData>         m_table;
 
     QPixmap                 m_avatar;
     PlayerRole              m_playerRole;
