@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>211</width>
+    <width>229</width>
     <height>192</height>
    </rect>
   </property>
@@ -64,20 +64,20 @@
         <widget class="QLabel" name="mp_labelAvatar">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
+           <horstretch>1</horstretch>
+           <verstretch>1</verstretch>
           </sizepolicy>
          </property>
          <property name="minimumSize">
           <size>
-           <width>75</width>
-           <height>75</height>
+           <width>40</width>
+           <height>40</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>75</width>
-           <height>75</height>
+           <width>1600</width>
+           <height>1600</height>
           </size>
          </property>
          <property name="styleSheet">

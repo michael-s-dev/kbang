@@ -22,8 +22,18 @@
 
 #include "ui_mainwindow.h"
 #include "serverconnection.h"
+#include "helpcarddialog.h"
+#include "settingsdialog.h"
 
 #include <QList>
+
+
+#define KBANG_CLIENT_VERSION_MAJOR 1
+#define KBANG_CLIENT_VERSION_MINOR 0
+#define KBANG_CLIENT_VERSION_REVISION 5
+
+
+class QSimpleUpdater;
 
 namespace client {
 
@@ -42,6 +52,7 @@ public:
     MainWindow();
     virtual ~MainWindow();
     virtual void paintEvent(QPaintEvent* event);
+    void keyPressEvent(QKeyEvent *ev);
 
 public slots:
     void showConnectToServerDialog();
@@ -50,11 +61,17 @@ public slots:
     void showJoinGameDialog();
     void leaveGame();
     void showAboutDialog();
+    void showHelpCardDialog();
+    void showSettingsDialog();
 
     void enterGameMode(int gameId, const QString& gameName, ClientType);
     void exitGameMode();
 
     void serverConnectionStatusChanged();
+     //Update Patch
+    void checkForUpdates();
+    void updateChangelog (QString url);
+
 
 signals:
     void connectToServer(QString serverHost, int serverPort);
@@ -72,12 +89,19 @@ private:
     CreateGameDialog*      mp_createGameDialog;
     JoinGameDialog*        mp_joinGameDialog;
     AboutDialog*           mp_aboutDialog;
+    HelpCardDialog*        mp_HelpCardDialog;
+    SettingsDialog*        mp_settingsDialog;
     ServerConnection       m_serverConnection;
     Game*                  mp_game;
     QList<OpponentWidget*> m_opponentWidgets;
     CardWidgetSizeManager* mp_cardWidgetSizeManager;
     QImage*                mp_background;
+    //Update Patch
+    QSimpleUpdater*        m_updater;
 
 };
 }
 #endif
+
+
+

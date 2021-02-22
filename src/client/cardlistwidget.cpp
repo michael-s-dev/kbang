@@ -115,7 +115,7 @@ void CardListWidget::paintEvent(QPaintEvent* event)
 {
     if (m_hasBox) {
         QPainter painter(this);
-        painter.fillRect(event->rect(), QColor(0, 0, 0, 16));
+        painter.fillRect(event->rect(), QColor(0, 0, 0, 16)); // transparent bg around cards
     }
 }
 

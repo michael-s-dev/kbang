@@ -28,6 +28,8 @@
 #include "cardactionswidget.h"
 #include "gameactionmanager.h"
 #include "config.h"
+#include "opponentwidget.h"
+
 
 using namespace client;
 
@@ -36,19 +38,16 @@ Config& cfg = Config::instance();
 int card_size_w = cfg.readInt("game" , "card-size");
 int card_size_h = card_size_w*1.54;
 
-//const QSize CardWidget::sm_qsizeSmall(48, 78 );
-//const QSize CardWidget::sm_qsizeSmall(50, 80);
-//const QSize CardWidget::sm_qsizeSmall(85, 127);
 const QSize CardWidget::sm_qsizeSmall(card_size_w, card_size_h);
-//const QSize CardWidget::sm_qsizeNormal(85, 127);
-const QSize CardWidget::sm_qsizeNormal(80, 124);
-const QSize CardWidget::sm_qsizeBig(200, 310);
+const QSize CardWidget::sm_qsizeNormal(card_size_w, card_size_h);
+const QSize CardWidget::sm_qsizeBig(card_size_w*2.8, card_size_h*2.8);
 
 //int CardWidget::sm_lifeLevels[6] = {0, 32, 52, 75, 97, 120};
 int CardWidget::sm_lifeLevels[6] = {0, card_size_h/4, card_size_h/2.5, card_size_h/1.7, card_size_h/1.3, card_size_h/1.1};
 
-const QSize  margins(10,10);
-const QPoint padding(5,5);
+const QSize  margins(7,7);
+const QPoint padding(3,3);
+
 
 CardWidget::CardWidget(QWidget* parent, Card::Type cardType):
         QLabel(parent),

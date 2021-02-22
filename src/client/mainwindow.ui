@@ -683,8 +683,17 @@
     </property>
     <addaction name="mp_actionAbout"/>
    </widget>
+   <widget class="QMenu" name="menuOptions">
+    <property name="title">
+     <string>Options</string>
+    </property>
+    <addaction name="actionHelp_Card"/>
+    <addaction name="actionConfig"/>
+    <addaction name="actionUpdate"/>
+   </widget>
    <addaction name="menuGame"/>
    <addaction name="menuHelp"/>
+   <addaction name="menuOptions"/>
   </widget>
   <action name="mp_actionConnectToServer">
    <property name="icon">
@@ -750,6 +759,33 @@
     <string>Ctrl+A</string>
    </property>
   </action>
+  <action name="actionHelp_Card">
+   <property name="icon">
+    <iconset resource="resources/client.qrc">
+     <normaloff>:/icons/ai.png</normaloff>:/icons/ai.png</iconset>
+   </property>
+   <property name="text">
+    <string>Help Card</string>
+   </property>
+  </action>
+  <action name="actionConfig">
+   <property name="icon">
+    <iconset resource="resources/client.qrc">
+     <normaloff>:/icons/human.png</normaloff>:/icons/human.png</iconset>
+   </property>
+   <property name="text">
+    <string>Config</string>
+   </property>
+  </action>
+  <action name="actionUpdate">
+   <property name="icon">
+    <iconset resource="../../QSimpleUpdater-2.0/etc/resources/qsimpleupdater.qrc">
+     <normaloff>:/icons/update.png</normaloff>:/icons/update.png</iconset>
+   </property>
+   <property name="text">
+    <string>Update</string>
+   </property>
+  </action>
  </widget>
  <customwidgets>
   <customwidget>
@@ -779,6 +815,7 @@
  </customwidgets>
  <resources>
   <include location="resources/client.qrc"/>
+  <include location="../../QSimpleUpdater-2.0/etc/resources/qsimpleupdater.qrc"/>
  </resources>
  <connections>
   <connection>

@@ -24,6 +24,8 @@
 #include "creategamedialog.h"
 #include "joingamedialog.h"
 #include "aboutdialog.h"
+#include "helpcarddialog.h"
+#include "settingsdialog.h"
 #include "logwidget.h"
 #include "chatwidget.h"
 #include "opponentwidget.h"
@@ -32,6 +34,8 @@
 #include "game.h"
 #include "card.h"
 #include "cardwidgetsizemanager.h"
+#include "cardwidget.h"
+#include "QSimpleUpdater.h"
 
 #include <QPainter>
 #include <QPaintEvent>
@@ -43,13 +47,15 @@ MainWindow::MainWindow():
         mp_createGameDialog(0),
         mp_joinGameDialog(0),
         mp_aboutDialog(0),
+        mp_HelpCardDialog(0),
+        mp_settingsDialog(0),
         m_serverConnection(this),
         mp_game(0)
 {
     setupUi(this);
     setStyleSheet(styleSheet() + "\n"
         "#mp_centralWidget {\n"
-        "   background-image: url(\"" + Config::dataPathString() + "gfx/misc/background.png\");\n"
+        "   border-image: url(\"" + Config::dataPathString() + "gfx/misc/background.jpg\")0 0 0 0 stretch stretch;\n"
         "}\n\n");
     Card::loadDefaultRuleset();
     mp_cardWidgetSizeManager = new CardWidgetSizeManager(this);
@@ -58,6 +64,17 @@ MainWindow::MainWindow():
     createMenu();
     createWidgets();
     updateActions();
+
+    // AutoUpdate Patch
+    m_updater = QSimpleUpdater::getInstance();
+
+    /* Check for updates when the "Check For Updates" button is clicked */
+    connect (m_updater, SIGNAL (checkingFinished (QString)),
+             this,        SLOT (updateChangelog  (QString)));
+
+    /* Resize the dialog to fit */
+    //setFixedSize (minimumSizeHint());
+    // ... end!
 
     connect(&m_serverConnection, SIGNAL(statusChanged()),
             this, SLOT(serverConnectionStatusChanged()));
@@ -89,6 +106,8 @@ MainWindow::MainWindow():
 MainWindow::~MainWindow()
 {
 }
+
+
 
 void MainWindow::paintEvent(QPaintEvent* e)
 {
@@ -133,6 +152,7 @@ void MainWindow::showCreateGameDialog()
                 &m_serverConnection, SLOT(createGame(CreateGameData,CreatePlayerData)));
     }
     mp_createGameDialog->show();
+
 }
 
 
@@ -145,6 +165,22 @@ void MainWindow::showJoinGameDialog()
     }
     mp_joinGameDialog->show();
 }
+
+void MainWindow::keyPressEvent(QKeyEvent *ev)
+{
+    if ( ev->key() == Qt::Key_F11  ){
+        if ( !this->isFullScreen()){
+            this->showFullScreen();
+            menubar->setVisible(false);
+}
+        else{
+            this->showMaximized();
+            menubar->setVisible(true);
+        }
+    }
+    return;
+}
+
 
 void MainWindow::leaveGame()
 {
@@ -161,6 +197,25 @@ void MainWindow::showAboutDialog()
         mp_aboutDialog = new AboutDialog(this);
     }
     mp_aboutDialog->show();
+
+}
+
+void MainWindow::showHelpCardDialog()
+{
+    if (!mp_HelpCardDialog) {
+        mp_HelpCardDialog = new HelpCardDialog(this);
+    }
+    mp_HelpCardDialog->show();
+
+}
+
+void MainWindow::showSettingsDialog()
+{
+    if (!mp_settingsDialog) {
+        mp_settingsDialog = new SettingsDialog(this);
+    }
+    mp_settingsDialog->show();
+
 }
 
 void MainWindow::enterGameMode(int gameId, const QString& gameName, ClientType clientType)
@@ -197,6 +252,7 @@ void MainWindow::serverConnectionStatusChanged()
 
 void MainWindow::createActions()
 {
+
     connect(mp_actionConnectToServer, SIGNAL(triggered()),
             this, SLOT(showConnectToServerDialog()));
     connect(mp_actionDisconnectFromServer, SIGNAL(triggered()),
@@ -209,6 +265,13 @@ void MainWindow::createActions()
             this, SLOT(leaveGame()));
     connect(mp_actionAbout, SIGNAL(triggered()),
             this, SLOT(showAboutDialog()));
+    connect(actionHelp_Card, SIGNAL(triggered()),
+            this, SLOT(showHelpCardDialog()));
+    connect(actionConfig, SIGNAL(triggered()),
+            this, SLOT(showSettingsDialog()));
+    connect(actionUpdate, SIGNAL(triggered()),
+            this, SLOT(checkForUpdates()));
+
 
     // Set up copy ability
     //connect(mp_actionCopy, SIGNAL(triggered()),
@@ -273,3 +336,45 @@ void MainWindow::updateActions()
         mp_actionLeaveGame->setEnabled(mp_game != 0);
     }
 }
+
+
+//==============================================================================
+// Define the URL of the Update Definitions file
+//==============================================================================
+
+static const QString DEFS_URL = "http://gameplanes.6f.sk/updates.json";
+
+
+
+//==============================================================================
+// Window::checkForUpdates
+//==============================================================================
+
+void MainWindow::checkForUpdates() {
+    /* Get settings from the UI */
+    QString version = QString("%1.%2.%3").arg(KBANG_CLIENT_VERSION_MAJOR).
+            arg(KBANG_CLIENT_VERSION_MINOR).
+            arg(KBANG_CLIENT_VERSION_REVISION);
+    bool downloaderEnabled = true;
+    bool notifyOnFinish = false;
+    bool notifyOnUpdate = true;
+
+    /* Apply the settings */
+    m_updater->setModuleVersion (DEFS_URL, version);
+    m_updater->setNotifyOnFinish (DEFS_URL, notifyOnFinish);
+    m_updater->setNotifyOnUpdate (DEFS_URL, notifyOnUpdate);
+    m_updater->setDownloaderEnabled (DEFS_URL, downloaderEnabled);
+
+    /* Check for updates */
+    m_updater->checkForUpdates (DEFS_URL);
+}
+
+//==============================================================================
+// Window::updateChangelog
+//==============================================================================
+
+void MainWindow::updateChangelog (QString url) {
+    //if (url == DEFS_URL)
+        // m_ui->changelogText->setText (m_updater->getChangelog (url));
+}
+

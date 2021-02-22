@@ -54,7 +54,9 @@ HEADERS += src/client/gameloop.h \
     src/client/selectplayericonwidget.h \
     src/client/gamemessageevent.h \
     src/client/cardwidgetsizemanager.h \
-    src/client/aboutdialog.h
+    src/client/aboutdialog.h \
+    src/client/helpcarddialog.h \
+    src/client/settingsdialog.h
 FORMS += src/client/connecttoserverdialog.ui \
     src/client/mainwindow.ui \
     src/client/joingamedialog.ui \
@@ -64,7 +66,9 @@ FORMS += src/client/connecttoserverdialog.ui \
     src/client/creategamedialog.ui \
     src/client/localplayerwidget.ui \
     src/client/newserverdialog.ui \
-    src/client/aboutdialog.ui
+    src/client/aboutdialog.ui \
+    src/client/helpcarddialog.ui \
+    src/client/settingsdialog.ui
 SOURCES += src/client/gameloop.cpp \
     src/client/main.cpp \
     src/client/connecttoserverdialog.cpp \
@@ -104,7 +108,12 @@ SOURCES += src/client/gameloop.cpp \
     src/client/selectplayericonwidget.cpp \
     src/client/gamemessageevent.cpp \
     src/client/cardwidgetsizemanager.cpp \
-    src/client/aboutdialog.cpp
+    src/client/aboutdialog.cpp \
+    src/client/helpcarddialog.cpp \
+    src/client/settingsdialog.cpp
+
+include (QSimpleUpdater-2.0/QSimpleUpdater.pri)
+
 unix { 
     LIBPATH += lib
     TARGETDEPS += lib/libkbang_common.a

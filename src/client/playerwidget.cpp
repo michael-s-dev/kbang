@@ -105,6 +105,7 @@ void PlayerWidget::setFromPublicData(const PublicPlayerData& publicPlayerData)
     m_isSheriff     = publicPlayerData.isSheriff;
     m_isWinner      = publicPlayerData.isWinner;
 
+
     setRoleFromPublicData(publicPlayerData.role);
 
     characterWidget()->setCharacter(publicPlayerData.character);
@@ -137,17 +138,20 @@ void PlayerWidget::paintEvent(QPaintEvent* event)
 {
     QPainter painter(this);
     painter.setClipRect(event->rect());
-    painter.fillRect(contentsRect(), QColor(0, 0, 0, 32));
+    painter.fillRect(contentsRect(), QColor(0, 0, 0, 16));
 
     if (m_isCurrent) {
-        painter.setPen(Qt::blue);
+        QPen pen;
+        pen.setWidth(3);
+        pen.setColor(QColor(100, 100, 200, 255));
+        painter.setPen(pen);
         painter.drawRect(contentsRect().adjusted(0, 0, -1, -1));
     }
 
     if (m_isRequested) {
         QPen pen;
-        pen.setColor(Qt::red);
-        pen.setWidth(2);
+        pen.setColor(QColor(220, 45, 50, 255));
+        pen.setWidth(3);
         pen.setStyle(Qt::DashLine);
         painter.setPen(pen);
         painter.drawRect(rect().adjusted(1, 1, -2, -2));

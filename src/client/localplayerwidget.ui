@@ -71,8 +71,11 @@ QToolButton:default {
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
         <widget class="QToolButton" name="mp_buttonEndTurn">
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
          <property name="toolTip">
-          <string>End of your turn</string>
+          <string>End of your turn (E)</string>
          </property>
          <property name="styleSheet">
           <string/>
@@ -87,12 +90,18 @@ QToolButton:default {
            <height>33</height>
           </size>
          </property>
+         <property name="shortcut">
+          <string>E</string>
+         </property>
         </widget>
        </item>
        <item>
         <widget class="QToolButton" name="mp_buttonPass">
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
          <property name="toolTip">
-          <string>Do not react - you will lose a life point,</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not react - you will lose a life point (R)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="icon">
           <iconset resource="resources/client.qrc">
@@ -104,12 +113,18 @@ QToolButton:default {
            <height>33</height>
           </size>
          </property>
+         <property name="shortcut">
+          <string>R</string>
+         </property>
         </widget>
        </item>
        <item>
         <widget class="QToolButton" name="mp_buttonDiscard">
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
          <property name="toolTip">
-          <string>Discard cards before end of your turn.</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Discard cards before end of your turn. (D)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="icon">
           <iconset resource="resources/client.qrc">
@@ -120,6 +135,9 @@ QToolButton:default {
            <width>33</width>
            <height>33</height>
           </size>
+         </property>
+         <property name="shortcut">
+          <string>D</string>
          </property>
          <property name="checkable">
           <bool>true</bool>
