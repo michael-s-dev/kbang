@@ -13,8 +13,9 @@
 
 int VoidAI::sm_playerCounter = 0;
 
-int minActionDelay = 200;
-int maxActionDelay = 1500;
+int minActionDelay = 800;
+int maxActionDelay = 2500;
+QString BotName = "Mr.Nobody";
 
 
 VoidAI::VoidAI(QObject* parent):
@@ -27,7 +28,7 @@ VoidAI::VoidAI(QObject* parent):
 CreatePlayerData VoidAI::createPlayerData() const
 {
     CreatePlayerData res;
-    res.name = QString("VoidAI #%1").arg(m_id);
+    res.name = QString("%1 #%2").arg(BotName).arg(m_id);
     res.password = "void";
     return res;
 }
@@ -40,8 +41,9 @@ void VoidAI::onHandlerRegistered(const PublicGameView* publicGameView, PlayerCtr
 void VoidAI::onActionRequest(ActionRequestType requestType)
 {
     m_requestType = requestType;
-    //int randomDelay = (rand() % (maxActionDelay - minActionDelay)) + minActionDelay;
-    QTimer::singleShot(200, this, SLOT(requestWithAction()));
+    // Simulate a real player
+    int randomDelay = (rand() % (maxActionDelay - minActionDelay)) + minActionDelay;
+    QTimer::singleShot(randomDelay, this, SLOT(requestWithAction()));
 }
 
 void VoidAI::requestWithAction()
@@ -156,6 +158,10 @@ void VoidAI::requestWithAction()
                             foreach(const PublicPlayerView* p, players) {
                                 if (mp_playerCtrl->privatePlayerView().id() == p->id()) {
                                     continue;
+                                 }
+                                // vice dont shoot sheriff
+                                if (mp_playerCtrl->privatePlayerView().role() == ROLE_DEPUTY && p->isSheriff()) {
+                                        continue;
                                 }
                                 try {
                                     mp_playerCtrl->playCard(card, p);
