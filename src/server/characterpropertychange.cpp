@@ -18,6 +18,9 @@ CharacterPropertyChange::CharacterPropertyChange(QObject* parent, Type type):
     case SlabTheKiller:
         setCharacterType(CHARACTER_SLAB_THE_KILLER);
         break;
+    case BelleStar:
+        setCharacterType(CHARACTER_BELLE_STAR);
+        break;
     }
 }
 
@@ -45,5 +48,9 @@ void CharacterPropertyChange::setPlayer(Player* player)
     case SlabTheKiller:
         player->setBangPower(2);
         break;
+    case BelleStar:
+        player->modifyIgnoreTableCards(true);
+        break;
+           }
     }
-}
+

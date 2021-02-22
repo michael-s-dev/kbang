@@ -196,6 +196,7 @@ void Card::loadDefaultRuleset()
     new Card("Molly Stark",     CHARACTER_MOLLY_STARK,      "gfx/characters/molly-stark.png");
     new Card("Doc Holyday",     CHARACTER_DOC_HOLYDAY,      "gfx/characters/doc-holyday.png");
     new Card("Apache Kid",      CHARACTER_APACHE_KID,       "gfx/characters/apache-kid.png");
+    new Card("Belle Star",      CHARACTER_BELLE_STAR,       "gfx/characters/belle-star.png");
     new Card("",                CHARACTER_UNKNOWN,          "gfx/characters/back-character.png");
 
 

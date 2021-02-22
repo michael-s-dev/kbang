@@ -71,6 +71,7 @@ public slots:
     void useAbility();
     void useAbility(const PublicPlayerView* targetPlayer);
     void useAbility(QList<PlayingCard*> cards);
+    void useAbility(QList<PlayingCard*> cards , const PublicPlayerView* targetPlayer);
 
     /**
      * Plays a card.

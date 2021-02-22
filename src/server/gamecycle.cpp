@@ -278,6 +278,14 @@ void GameCycle::useAbility(Player* player, QList<PlayingCard*> cards)
     sendRequest();
 }
 
+void GameCycle::useAbility(Player* player, QList<PlayingCard*> cards , Player* targetPlayer)
+{
+    m_contextDirty = 0;
+    player->character()->useAbility(cards , targetPlayer);
+    sendRequest();
+}
+
+
 void GameCycle::checkDeck(Player* player, PlayingCard* causedBy,
                           bool (*checkFunc)(PlayingCard*), CheckDeckResultHandler* resultHandler)
 {

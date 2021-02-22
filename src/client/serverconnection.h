@@ -74,6 +74,7 @@ public slots:
     void useAbility();
     void useAbility(int playerId);
     void useAbility(QList<int> cards);
+    void useAbility(QList<int> cards, int targetPlayerId);
 
     void endTurn();
     void pass();

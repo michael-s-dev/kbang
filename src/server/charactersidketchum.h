@@ -13,14 +13,12 @@ public:
     };
     CharacterSidKetchum(QObject *parent , Type type = SidKetchum);
     virtual void useAbility(QList<PlayingCard*> cards);
-    virtual void useAbility(Player* targetPlayer);
+    virtual void useAbility(QList<PlayingCard*> cards, Player* targetPlayer);
 
 
 private:
-     PlayingCard* swapCards();
-     PlayingCard* mp_bang;
      Type m_type;
-     int m_virtualbang;
+     PlayingCard* mp_bang;
 
 };
 #endif // CHARACTERSIDKETCHUM_H

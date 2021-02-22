@@ -126,6 +126,10 @@ void CardMultiShoot::respondCard(PlayingCard* targetCard)
             break;
         if (targetCard->greenready() == 1){
         targetCard->assertOnTable(); // Continue only if on table
+        if( mp_shootingPlayer->ignoreTableCards()){ // Belle Star
+             gameTable()->playerDiscardCard(targetCard);
+             return;
+        }
         game()->gameCycle().unsetResponseMode();
         gameTable()->playerRespondWithGreenCard(targetCard);
         if (targetCard->type() == CARD_BIBBIA)
@@ -142,6 +146,8 @@ void CardMultiShoot::respondCard(PlayingCard* targetCard)
         if (m_type == Indians)
             break;
         if (m_usedBarrels.contains(targetCard))
+            break;
+        if (mp_shootingPlayer->ignoreTableCards()) // belle star
             break;
         targetCard->assertOnTable();
         m_usedBarrels.append(targetCard);

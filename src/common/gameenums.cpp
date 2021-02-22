@@ -73,6 +73,7 @@ CharacterType stringToCharacterType(const QString& s)
     if (s == "molly stark")     return CHARACTER_MOLLY_STARK;
     if (s == "doc holyday")     return CHARACTER_DOC_HOLYDAY;
     if (s == "apache kid")      return CHARACTER_APACHE_KID;
+    if (s == "belle star")      return CHARACTER_BELLE_STAR;
     return CHARACTER_UNKNOWN;
 }
 
@@ -108,6 +109,7 @@ QString characterTypeToString(const CharacterType& t)
     case CHARACTER_ELENA_FUENTE:    return "elena fuente";
     case CHARACTER_MOLLY_STARK:     return "molly stark";
     case CHARACTER_DOC_HOLYDAY:     return "doc holyday";
+    case CHARACTER_BELLE_STAR:      return "belle star";
     case CHARACTER_APACHE_KID:      return "apache kid";
     }
     return "unknown";
@@ -267,6 +269,10 @@ ReactionType stringToReactionType(const QString& s)
     if (s == "last-save")       return REACTION_LASTSAVE;
     if (s == "lucky-duke")      return REACTION_LUCKYDUKE;
     if (s == "kit-carlson")     return REACTION_KITCARLSON;
+    if (s == "howitzer")        return REACTION_HOWITZER;
+    if (s == "pugno")           return REACTION_PUGNO;
+    if (s == "pugnale")         return REACTION_PUGNALE;
+
     return REACTION_NONE;
 }
 
@@ -281,6 +287,9 @@ QString reactionTypeToString(const ReactionType& r)
     case REACTION_LASTSAVE:     return "last-save";
     case REACTION_LUCKYDUKE:    return "lucky-duke";
     case REACTION_KITCARLSON:   return "kit-carlson";
+    case REACTION_HOWITZER:     return "howitzer";
+    case REACTION_PUGNALE:      return "pugnale";
+    case REACTION_PUGNO:        return "pugno";
     case REACTION_NONE:         return "";
     }
     return "";

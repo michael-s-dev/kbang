@@ -11,7 +11,8 @@ public:
         RoseDoolan,
         PaulRegret,
         WillyTheKid,
-        SlabTheKiller
+        SlabTheKiller,
+        BelleStar
     };
 
     CharacterPropertyChange(QObject* parent, Type);

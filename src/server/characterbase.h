@@ -36,6 +36,7 @@ public:
     virtual void useAbility();
     virtual void useAbility(Player* targetPlayer);
     virtual void useAbility(QList<PlayingCard*> cards);
+    virtual void useAbility(QList<PlayingCard*> cards , Player* targetPlayer);
 
     virtual void setPlayer(Player* player);
     virtual void playerDied();

@@ -99,6 +99,11 @@ void CharacterBase::useAbility(QList<PlayingCard*> cards)
     throw BadUsageException();
 }
 
+void CharacterBase::useAbility(QList<PlayingCard*> cards , Player* targetPlayer)
+{
+    throw BadUsageException();
+}
+
 void CharacterBase::setPlayer(Player* player)
 {
     mp_player = player;

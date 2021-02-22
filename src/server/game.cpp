@@ -144,7 +144,9 @@ int Game::getDistance(Player *fromPlayer, Player *toPlayer) const
     }
 
     baseDistance -= fromPlayer->distanceOut();
-    baseDistance += toPlayer->distanceIn();
+    if (!fromPlayer->ignoreTableCards()) // Belle Star
+        baseDistance += toPlayer->distanceIn();
+
     return baseDistance;
 }
 

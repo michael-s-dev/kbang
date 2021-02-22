@@ -74,6 +74,7 @@ public:
     void useAbility(Player* player);
     void useAbility(Player* player, Player* targetPlayer);
     void useAbility(Player* player, QList<PlayingCard*> cards);
+    void useAbility(Player* player, QList<PlayingCard*> cards , Player* targetPlayer);
 
     void checkDeck(Player* player, PlayingCard* causedBy, bool (*checkFunc)(PlayingCard*), CheckDeckResultHandler*);
 

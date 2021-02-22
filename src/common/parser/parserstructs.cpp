@@ -526,7 +526,14 @@ void ActionPlayCardData::write(QXmlStreamWriter* writer) const
 void ActionUseAbilityData::read(XmlNode* node)
 {
     Q_ASSERT(node->name() == elementName);
-    if (!node->attribute("target-player-id").isNull()) {
+    if (!node->getChildren().isEmpty())
+        if (!node->getChildren().last()->attribute("target-playerid").isNull()) {
+             type = TypeCardsPlayer;
+             targetPlayerId = node->getChildren().last()->attribute("target-playerid").toInt();
+             foreach (XmlNode* cardNode, node->getChildren())
+                 targetCardsId.append(cardNode->attribute("id").toInt());
+        }
+      else if (!node->attribute("target-player-id").isNull()) {
         type = TypePlayer;
         targetPlayerId = node->attribute("target-player-id").toInt();
     } else if (node->getChildren().size() == 0) {
@@ -555,6 +562,17 @@ void ActionUseAbilityData::write(QXmlStreamWriter* writer) const
             writer->writeEndElement();
         }
         break;
+    case TypeCardsPlayer:
+        foreach(int cardId, targetCardsId){
+            writer->writeStartElement("card");
+            writer->writeAttribute("id", QString::number(cardId));
+            writer->writeEndElement();
+        }
+        writer->writeStartElement("card");
+        writer->writeAttribute("target-playerid", QString::number(targetPlayerId));
+        writer->writeEndElement();
+        break;
+
     }
     writer->writeEndElement();
 }

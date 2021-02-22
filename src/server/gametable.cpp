@@ -81,13 +81,18 @@ void GameTable::playerPlayCard(PlayingCard* card)
 
 void GameTable::playerPlayCard(PlayingCard* card, Player* targetPlayer)
 {
-    if (card->isVirtual())
-        card = card->master();
+    bool v_card;
+    card->isVirtual() ? v_card = true : v_card = false ;
+    if (v_card) card = card->master();
+
     Q_ASSERT(card->pocket() == POCKET_HAND);
     Player* owner = card->owner();
-     PocketType pocket = card->pocket();
+    PocketType pocket = card->pocket();
     moveCardToGraveyard(card);
-    mp_game->gameEventManager().onPlayerPlayCard(owner, card, targetPlayer , pocket);
+    if (v_card)
+        mp_game->gameEventManager().onPlayerDiscardCard(owner, card, pocket);
+    else
+        mp_game->gameEventManager().onPlayerPlayCard(owner, card, targetPlayer , pocket);
     owner->checkEmptyHand();
 }
 

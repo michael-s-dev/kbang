@@ -48,6 +48,7 @@ Player::Player(Game* game, int id, const CreatePlayerData& createPlayerData):
         m_lastBangTurn(-1),
         m_unlimitedBangs(0),
         m_bangPower(1),
+        m_ignoreTableCards(false),
         m_publicPlayerView(this),
         m_privatePlayerView(this)
 {
@@ -115,6 +116,12 @@ bool Player::canPlayBang() const
     return (m_unlimitedBangs > 0 || m_lastBangTurn != mp_game->gameCycle().turnNumber());
 }
 
+bool Player::canUseAbility() const
+{
+    return ( m_lastAbilityTurn != mp_game->gameCycle().turnNumber());
+}
+
+
 void Player::modifyLifePoints(int x, Player* causedBy)
 {
     // modify lifePoints member
@@ -171,6 +178,11 @@ void Player::modifyDistanceOut(int delta)
 void Player::modifyUnlimitedBangs(int delta)
 {
     m_unlimitedBangs += delta;
+}
+
+void Player::modifyIgnoreTableCards(bool delta)
+{
+   m_ignoreTableCards = delta;
 }
 
 void Player::setBangPower(int bangPower)
@@ -289,6 +301,11 @@ void Player::update(const CreatePlayerData& createPlayerData)
 void Player::onBangPlayed()
 {
     m_lastBangTurn = mp_game->gameCycle().turnNumber();
+}
+
+void Player::onAbilityUsed()
+{
+    m_lastAbilityTurn = mp_game->gameCycle().turnNumber();
 }
 
 void Player::onTurnStart()

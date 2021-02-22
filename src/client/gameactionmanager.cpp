@@ -95,9 +95,23 @@ void GameActionManager::onCardRightClicked(CardWidget* cardWidget)
 
 void GameActionManager::onPlayerClicked(PlayerWidget* playerWidget)
 {
-    if (!mp_game->isAbleToRequest() || m_state != STATE_SELECT_PLAYER ||
-        playerWidget->id() == 0     || mp_activeCard == 0)
+    if (!mp_game->isAbleToRequest()|| playerWidget->id() == 0|| mp_activeCard == 0)
         return;
+    // player -> card
+    if ( m_selectionSize >= 2 && m_cardSelection.size() == m_selectionSize -1 ){
+            CardWidget* card = m_cardSelection[0];
+            if (mp_activeCard->type() == Card::Character){
+                QList<int> cards;
+                foreach (CardWidget* card, m_cardSelection)
+                    cards.append(card->cardData().id);
+                mp_game->serverConnection()->useAbility(cards , playerWidget->id());
+            }
+            mp_game->serverConnection()->playCardWithCardAndPlayer(mp_activeCard->cardData().id , card->cardData().id , playerWidget->id());
+            unsetActiveCard();
+        return;
+    }
+
+    if (m_state != STATE_SELECT_PLAYER)return;
 
     if (mp_activeCard->type() == Card::Character) {
         mp_game->serverConnection()->useAbility(playerWidget->id());
@@ -189,7 +203,7 @@ void GameActionManager::onCharacterClicked(CardWidget* cardWidget)
         selectCards(cardWidget, 2);
         break;
     case CHARACTER_DOC_HOLYDAY:
-        selectPlayer(cardWidget);
+        selectCards(cardWidget, 3);
         break;
     case CHARACTER_JOSE_DELGADO:
         selectCards(cardWidget, 1);
@@ -250,10 +264,16 @@ void GameActionManager::removeFromSelection(CardWidget* card)
 void GameActionManager::useAbilityWithCards()
 {
     QList<int> cards;
+    CardWidget* lastcard = m_cardSelection.last();
     foreach (CardWidget* card, m_cardSelection)
         cards.append(card->cardData().id);
-
+    if ( m_selectionSize == 3 ){
+        cards.removeLast();
+        mp_game->serverConnection()->useAbility(cards , lastcard->ownerId());
+    }
+    else{
     mp_game->serverConnection()->useAbility(cards);
+    }
 }
 
 void GameActionManager::playWithCards()

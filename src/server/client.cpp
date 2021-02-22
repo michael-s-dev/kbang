@@ -35,9 +35,6 @@ Client::Client(QObject* parent, int id, QTcpSocket* socket):
         mp_playerCtrl(0),
         mp_socket(socket)
 {
-//    QTimer *timer = new QTimer(this);
-//    connect(timer, SIGNAL(timeout()), this, SLOT(onKeepAlive()));
-//    timer->start(10000);
     Q_ASSERT(m_id != 0);
     mp_parser = new Parser(this, socket);
     connect(mp_parser,  SIGNAL(terminated()),
@@ -280,6 +277,14 @@ void Client::onActionUseAbility(const ActionUseAbilityData& actionUseAbilityData
             case ActionUseAbilityData::TypeCards: {
                 QList<PlayingCard*> cards = getCards(actionUseAbilityData.targetCardsId);
                 mp_playerCtrl->useAbility(cards);
+                break;
+            }
+            case ActionUseAbilityData::TypeCardsPlayer: {
+                PublicPlayerView* targetPlayer = getPlayer(actionUseAbilityData.targetPlayerId);
+                QList<PlayingCard*> cards = getCards(actionUseAbilityData.targetCardsId);
+                if (targetPlayer == 0)
+                    return;
+                mp_playerCtrl->useAbility(cards , targetPlayer);
                 break;
             }
         }

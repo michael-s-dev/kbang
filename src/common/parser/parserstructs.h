@@ -214,7 +214,8 @@ struct ActionUseAbilityData {
     enum {
         TypeSimple,
         TypePlayer,
-        TypeCards
+        TypeCards,
+        TypeCardsPlayer
     } type;
     int targetPlayerId;
     QList<int> targetCardsId;

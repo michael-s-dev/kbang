@@ -105,14 +105,14 @@ void CardBang::play(Player *targetPlayer)
     }
 
     /* one-bang-per-turn check */
-    if ((!owner()->canPlayBang()) && (m_bangType == bang))
+    if ((!owner()->canPlayBang()) && (m_bangType == bang) && (!this->isVirtual()))
         throw OneBangPerTurnException();
 
     /*pugno range check*/
     if ( (m_bangType == pugno || m_bangType == pugnale || m_bangType == derringer)  && (game()->getDistance(owner(), targetPlayer) > 1))
         throw PlayerOutOfRangeException();
 
-    if ( m_bangType == bang)
+    if ( (m_bangType == bang) && (!this->isVirtual()) )
         owner()->onBangPlayed();
 
 
@@ -184,14 +184,17 @@ void CardBang::respondCard(PlayingCard* targetCard)
     case CARD_PLACCA_DI_FERRO:
     case CARD_BIBBIA:{
         if (targetCard->greenready() == 1){
-        targetCard->assertOnTable(); // Continue only if on table
-        game()->gameCycle().unsetResponseMode();
-        gameTable()->playerRespondWithGreenCard(targetCard);
-        missed();
+            targetCard->assertOnTable(); // Continue only if on table
+            if(mp_attackingPlayer->ignoreTableCards()){ // Belle Star
+                 gameTable()->playerDiscardCard(targetCard);
+                 return;
+            }
+            game()->gameCycle().unsetResponseMode();
+            gameTable()->playerRespondWithGreenCard(targetCard);
+            missed();
         if (targetCard->type() == CARD_BIBBIA)
         gameTable()->playerDrawFromDeck(mp_attackedPlayer, 1);
         return;
-//        return;
         }
         else {
             throw BadCardException();
@@ -200,6 +203,8 @@ void CardBang::respondCard(PlayingCard* targetCard)
     }
     case CARD_BARREL: {
         if (m_usedBarrels.contains(targetCard))
+            break;
+        if (mp_attackingPlayer->ignoreTableCards()) // belle star
             break;
         targetCard->assertOnTable();
         m_usedBarrels.append(targetCard);

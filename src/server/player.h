@@ -105,6 +105,7 @@ public:
     inline int                  bangPower()        const { return m_bangPower;         }
     inline PublicPlayerView&    publicView()       const { return m_publicPlayerView;  }
     inline PrivatePlayerView&   privateView()      const { return m_privatePlayerView; }
+    inline bool                 ignoreTableCards() const { return m_ignoreTableCards;  }
     bool                        isAI()             const;
     bool                        isPublicRole()     const;
 
@@ -152,6 +153,7 @@ public:
      * @see void Player::onBangPlayed()
      */
     bool canPlayBang() const;
+    bool canUseAbility() const;
 
   ///////////////
  // MODIFIERS //
@@ -174,6 +176,7 @@ public:
     void modifyDistanceOut(int delta);
     void modifyUnlimitedBangs(int delta);
     void setBangPower(int bangPower);
+    void modifyIgnoreTableCards(bool delta);
     void setWeaponRange(int weaponRange);
     void setAlive(bool isAlive);
     void setWinner(bool isWinner);
@@ -214,6 +217,9 @@ public:
      * @see bool Player::canPlayBang()
      */
     void onBangPlayed();
+    void onAbilityUsed();
+
+
 
     void onTurnStart();
 
@@ -254,6 +260,7 @@ private:
     CharacterBase*            mp_character;
     bool                      m_isAlive;
     bool                      m_isWinner;
+    bool                      m_ignoreTableCards;
     Game*                     mp_game;
     PlayerCtrl*               mp_playerCtrl;
     GameEventListener*         mp_gameEventListener;
@@ -263,6 +270,7 @@ private:
     int                       m_distanceOut;
     int                       m_lastBangTurn;
     int                       m_unlimitedBangs;
+    int                       m_lastAbilityTurn;
     int                       m_bangPower;
     int                       m_currentPredraw;
 

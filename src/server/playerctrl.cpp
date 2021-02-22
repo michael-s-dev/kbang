@@ -63,6 +63,11 @@ void PlayerCtrl::useAbility(QList<PlayingCard*> cards)
     mp_player->game()->gameCycle().useAbility(mp_player, cards);
 }
 
+void PlayerCtrl::useAbility(QList<PlayingCard*> cards , const PublicPlayerView* targetPlayer)
+{
+    mp_player->game()->gameCycle().useAbility(mp_player, cards , Player::player(targetPlayer));
+}
+
 void PlayerCtrl::playCard(PlayingCard* card)
 {
     mp_player->game()->gameCycle().playCard(mp_player, card);
