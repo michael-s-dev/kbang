@@ -5,6 +5,8 @@
 #include "gameexceptions.h"
 #include "game.h"
 
+#include "weaponcard.h"
+
 
 
 CardTaker::CardTaker(Game* game, int id, CardTaker::Type type, CardSuit cardSuit, CardRank cardRank):
@@ -58,9 +60,24 @@ void CardTaker::play( PlayingCard* targetCard , Player* targetPlayer ){
       if (targetCard->pocket() != POCKET_TABLE) {
           throw BadCardException();
       }
-
+      // Play the card
       gameTable()->playerPlayCard(this, targetCard);
+
+      // Double weapon check
+      WeaponCard* weaponCard = qobject_cast<WeaponCard*>(targetCard);
+      if ( weaponCard != 0 ) {
+          qDebug() <<  "hello there";
+        foreach(PlayingCard* card, targetPlayer->table()) {
+          WeaponCard* weaponCard = qobject_cast<WeaponCard*>(card);
+          if (weaponCard == 0)
+              continue;
+          gameTable()->playerDiscardCard(card);
+        }
+      }
+      // Move target card to the player
       gameTable()->passTableCard(targetCard , targetPlayer);
+
+
 
     }
     else{

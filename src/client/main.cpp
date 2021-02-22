@@ -29,9 +29,6 @@
 #include <signal.h>
 #endif
 
-#define KBANG_CLIENT_VERSION_MAJOR 0
-#define KBANG_CLIENT_VERSION_MINOR 2
-#define KBANG_CLIENT_VERSION_REVISION 4
 
 using namespace client;
 
@@ -58,7 +55,7 @@ int main(int argc, char *argv[])
     if  (cfg.readString("game" , "fullscreen") == "true")
     mainWindow.showFullScreen();
     else
-    mainWindow.show();
+    mainWindow.showMaximized();
 
     return app.exec();
 }
