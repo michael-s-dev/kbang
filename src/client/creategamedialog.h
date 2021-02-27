@@ -41,13 +41,16 @@ private slots:
     void playerCountsChanged();
     void validateInput();
     void on_pushButtonCreate_clicked();
+    void loadConfigValues();
 
 signals:
     void createGame(const CreateGameData&, const CreatePlayerData&);
 
 private:
-    void loadConfigValues();
+    void showEvent(QShowEvent* event);
     void saveConfigValues(const CreateGameData&);
+
+    bool is_opening;
 };
 
 }

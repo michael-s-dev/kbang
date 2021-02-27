@@ -53,10 +53,17 @@ MainWindow::MainWindow():
         mp_game(0)
 {
     setupUi(this);
-    setStyleSheet(styleSheet() + "\n"
-        "#mp_centralWidget {\n"
-        "   border-image: url(\"" + Config::dataPathString() + "gfx/misc/background.jpg\")0 0 0 0 stretch stretch;\n"
-        "}\n\n");
+
+    Config& cfg = Config::instance();
+    cfg.refresh();
+
+    if ( cfg.readString("game","bgimage") != "Classic"){
+        setStyleSheet(styleSheet() + "\n"
+            "#mp_centralWidget {\n"
+            "   border-image: url(\"" + Config::dataPathString() + "gfx/misc/background.jpg\")0 0 0 0 stretch stretch;\n"
+            "}\n\n");
+    }
+
     Card::loadDefaultRuleset();
     mp_cardWidgetSizeManager = new CardWidgetSizeManager(this);
 
@@ -87,8 +94,6 @@ MainWindow::MainWindow():
     connect(this, SIGNAL(connectToServer(QString, int)),
         &m_serverConnection, SLOT(connectToServer(QString, int)));
 
-    Config& cfg = Config::instance();
-    cfg.refresh();
 
     // Get the default translation language
     //emit mp_chatWidget->setLanguage(cfg.readString("options","translate-to"));
@@ -113,8 +118,9 @@ void MainWindow::paintEvent(QPaintEvent* e)
 {
     QPainter painter(this);
     QRadialGradient g(width() / 2, height() / 2, width() / 2, width() / 2 , height() / 2);
-    g.setColorAt(0, QColor(239, 215, 179));
-    g.setColorAt(0.5 , QColor(211, 179, 140));
+    //g.setColorAt(0, QColor(239, 215, 179));
+   //g.setColorAt(0.5 , QColor(211, 179, 140));
+   g.setColorAt(0, QColor(80, 80, 100));
     painter.fillRect(e->rect(), g);
 
     // place the background pic

@@ -203,6 +203,9 @@ void Downloader::cancelDownload() {
 //==============================================================================
 
 void Downloader::onDownloadFinished() {
+
+   if ( m_reply->error()) return;
+
     m_ui->stopButton->setText    (tr ("Close"));
     m_ui->downloadLabel->setText (tr ("Download complete!"));
     m_ui->timeLabel->setText     (tr ("The installer will open separately")

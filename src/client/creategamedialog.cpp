@@ -28,7 +28,7 @@ using namespace client;
 const int minPlayers = 4, maxPlayers = 7;
 
 CreateGameDialog::CreateGameDialog(QWidget *parent)
- : QDialog(parent), Ui::CreateGameDialog()
+    : QDialog(parent), Ui::CreateGameDialog() , is_opening(false)
 {
     setupUi(this);
 
@@ -38,14 +38,6 @@ CreateGameDialog::CreateGameDialog(QWidget *parent)
     spinBoxMaxPlayers->setRange(minPlayers, maxPlayers);
     spinBoxAIPlayers->setRange(0, maxPlayers - 1);
 
-    if (Config::instance().hasGroup("create-game-dialog")) {
-        loadConfigValues();
-    } else {
-        spinBoxMinPlayers->setValue(minPlayers);
-        spinBoxMaxPlayers->setValue(maxPlayers);
-        spinBoxAIPlayers->setValue(0);
-        spinBoxMaxSpectators->setValue(-1);
-    }
 
     connect(spinBoxMinPlayers, SIGNAL(valueChanged(int)),
             this, SLOT(playerCountsChanged()));
@@ -61,6 +53,16 @@ CreateGameDialog::CreateGameDialog(QWidget *parent)
 
 CreateGameDialog::~CreateGameDialog()
 {
+}
+
+// paint event
+void CreateGameDialog::showEvent(QShowEvent* event) {
+    if (is_opening) return;
+
+    is_opening = true;
+    QDialog::showEvent(event);
+    loadConfigValues();
+    is_opening = false;
 }
 
 void CreateGameDialog::playerCountsChanged()

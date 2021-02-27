@@ -66,14 +66,16 @@ signals:
 
 private:
     const GameInfoData* gameInfoData(int gameId);
-    void loadConfigValues();
+    void  showEvent(QShowEvent* event);
     void saveConfigValues();
+    void loadConfigValues();
 
 
     ServerConnection*           mp_serverConnection;
     GameInfoListData            m_gameList;
     int                         m_currentGameId;
     int                         m_currentPlayerId;
+    bool                        is_opening;
 
 
 };

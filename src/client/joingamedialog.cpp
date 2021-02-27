@@ -35,7 +35,8 @@ JoinGameDialog::JoinGameDialog(QWidget *parent, ServerConnection* serverConnecti
         QDialog(parent),
         mp_serverConnection(serverConnection),
         m_currentGameId(0),
-        m_currentPlayerId(0)
+        m_currentPlayerId(0),
+        is_opening(false)
 {
     setupUi(this);
     connect(pushButtonRefresh, SIGNAL(clicked()),
@@ -65,6 +66,16 @@ JoinGameDialog::JoinGameDialog(QWidget *parent, ServerConnection* serverConnecti
 
 JoinGameDialog::~JoinGameDialog()
 {
+}
+
+// paint event
+void JoinGameDialog::showEvent(QShowEvent* event) {
+    if (is_opening) return;
+
+    is_opening = true;
+    QDialog::showEvent(event);
+    loadConfigValues();
+    is_opening = false;
 }
 
 QString gameState(GameState g)

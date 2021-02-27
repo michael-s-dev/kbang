@@ -5,6 +5,8 @@
 #include "common.h"
 
 #include <QSound>
+#include <QMediaPlaylist>
+#include <QMediaPlayer>
 
 using namespace client;
 
@@ -29,13 +31,16 @@ void GameMessageEvent::run()
     QString targetPlayerName = m_gameMessage.targetPlayer ? mp_game->playerWidget(m_gameMessage.targetPlayer)->name() : "";
     QString causedByName     = m_gameMessage.causedBy ? mp_game->playerWidget(m_gameMessage.causedBy)->name() : "";
 
-
+    //Get music name from config
+    Config& cfg = Config::instance();
+    cfg.refresh();
+    QString music = cfg.readString("game" , "music") + ".wav";
 
 
     switch(m_gameMessage.type) {
     case GAMEMESSAGE_GAMESTARTED:
         mp_game->setGameState(GAMESTATE_PLAYING);
-       QSound::play(Config::dataPathString() + "sounds/gamestart.wav");
+        QSound::play(Config::dataPathString() + "sounds/" + music);
         msg = tr("The game has just started.");
         break;
     case GAMEMESSAGE_GAMEFINISHED:

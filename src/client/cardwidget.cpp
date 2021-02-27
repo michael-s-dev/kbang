@@ -37,10 +37,13 @@ Config& cfg = Config::instance();
 
 int card_size_w = cfg.readInt("game" , "card-size");
 int card_size_h = card_size_w*1.54;
+int card_zoom   = cfg.readInt("game" ,"card-zoom");
+int zoom        = (card_zoom == 0) ? 3 : card_zoom;
+
 
 const QSize CardWidget::sm_qsizeSmall(card_size_w, card_size_h);
 const QSize CardWidget::sm_qsizeNormal(card_size_w, card_size_h);
-const QSize CardWidget::sm_qsizeBig(card_size_w*2.8, card_size_h*2.8);
+const QSize CardWidget::sm_qsizeBig(card_size_w*zoom, card_size_h*zoom);
 
 //int CardWidget::sm_lifeLevels[6] = {0, 32, 52, 75, 97, 120};
 int CardWidget::sm_lifeLevels[6] = {0, card_size_h/4, card_size_h/2.5, card_size_h/1.7, card_size_h/1.3, card_size_h/1.1};

@@ -29,16 +29,17 @@ Config::Config()
     QString kbangDirName;
     QString kbangConfigName = "kbang.conf";
 #ifdef Q_OS_WIN
-    kbangDirName = "KBang";
+    kbangDirName = "config";
 #else
     kbangDirName = ".kbang";
 #endif
-    if (QDir::home().cd(kbangDirName) == 0) {
-        if (QDir::home().mkdir(kbangDirName) == 0) {
+
+    if (QDir::current().cd(kbangDirName) == 0) {
+        if (QDir::current().mkdir(kbangDirName) == 0) {
             qFatal("Cannot create KBang config directory.");
         }
     }
-    QDir kbangDir = QDir::home();
+    QDir kbangDir = QDir::current();
     if (kbangDir.cd(kbangDirName) == 0) {
         qFatal("Cannot change to KBang config directory.");
     }
@@ -60,12 +61,6 @@ Config::~Config()
 
 void Config::update(){
     refresh();
-    if  ( readString("game" , "fullscreen") == ""  ){
-        writeString("game" , "fullscreen" , "true");
-    }
-    if  ( readInt("game" , "card-size") == 0  ){
-         writeInt("game" , "card-size" , 75);
-    }
     store();
 }
 
@@ -234,6 +229,14 @@ void Config::createGroupIfNeeded(QString group)
 
 void Config::createDefaultConfig()
 {
+     {
+        ConfigGroup& cgd = m_groups["create-game-dialog"];
+        cgd.name = "create-game-dialog";
+        cgd.records["ai-players"] = ConfigRecord("ai-players", CONFIG_RECORD_SINGLE, "3");
+        cgd.records["max-players"] = ConfigRecord("max-players", CONFIG_RECORD_SINGLE, "7");
+        cgd.records["min-players"] = ConfigRecord("min-players", CONFIG_RECORD_SINGLE, "4");
+        cgd.records["name"] = ConfigRecord("name", CONFIG_RECORD_SINGLE, "Your Game");
+    }
     {
         ConfigGroup& network = m_groups["network"];
         network.name = "network";
@@ -265,7 +268,10 @@ void Config::createDefaultConfig()
         ConfigGroup& group = m_groups["game"];
         group.name = "game";
         group.records["fullscreen"] = ConfigRecord("fullscreen", CONFIG_RECORD_SINGLE, "false");
-        group.records["card-size"] = ConfigRecord("card-size", CONFIG_RECORD_SINGLE, "85");
+        group.records["card-size"] = ConfigRecord("card-size", CONFIG_RECORD_SINGLE, "68");
+        group.records["bgimage"] = ConfigRecord("bgimage", CONFIG_RECORD_SINGLE, "Western City");
+        group.records["card-zoom"] = ConfigRecord("card-zoom", CONFIG_RECORD_SINGLE, "3");
+        group.records["music"] = ConfigRecord("music", CONFIG_RECORD_SINGLE, "Classic");
     }
 
 }
