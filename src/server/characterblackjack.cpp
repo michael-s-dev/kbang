@@ -16,12 +16,17 @@ CharacterBlackJack::CharacterBlackJack(QObject* parent, Type type):
         setCharacterType(CHARACTER_BILL_NOFACE);
     else if (type == SeanMallory)
         setCharacterType(CHARACTER_SEAN_MALLORY);
+    else if (type == Tuco)
+        setCharacterType(CHARACTER_TUCO);
+
 }
 
 
 int CharacterBlackJack::maxLifePoints() const
 {
-    if (m_type == BlackJack || m_type == BillNoface)
+    if (m_type == Tuco)
+        return 5;
+    else if (m_type == BlackJack || m_type == BillNoface)
         return 4;
     else
         return 3;
@@ -48,6 +53,26 @@ void CharacterBlackJack::draw(bool)
        int missing_hp =  maxhp - lp;
        gameTable().playerDrawFromDeck(mp_player, 1 + missing_hp , 0);
    }
+   else if (m_type == Tuco) {
+
+       QList<PlayingCard*> cards = mp_player->table();
+
+       bool bluecard = false ;
+       foreach (PlayingCard* card, cards)
+       {
+       if (card->type() == CARD_APPALOSSA || card->type() == CARD_BARREL ||
+               card->type() == CARD_DYNAMITE || card->type() == CARD_JAIL|| card->type() == CARD_MUSTANG || card->type() == CARD_VOLCANIC ||
+               card->type() == CARD_REMINGTON || card->type() == CARD_CARABINE ||
+               card->type() == CARD_WINCHESTER || card->type() == CARD_SCHOFIELD || card->type() == CARD_DEAGLE || card->type() == CARD_RIPARO)
+
+           bluecard = true ;
+
+      }
+       if (bluecard == true)
+         gameTable().playerDrawFromDeck(mp_player, 2, 0);
+        else
+         gameTable().playerDrawFromDeck(mp_player, 4, 0);
+}
    else {
        gameTable().playerDrawFromDeck(mp_player, 2, 0); // Sean mallory normal draw
    }

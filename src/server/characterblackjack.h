@@ -11,7 +11,8 @@ public:
         BlackJack,
         KingSchultz,
         BillNoface,
-        SeanMallory
+        SeanMallory,
+        Tuco
     };
 
     CharacterBlackJack(QObject *parent , Type);

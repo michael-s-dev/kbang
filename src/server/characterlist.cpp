@@ -97,6 +97,8 @@ CharacterBase* CharacterList::createCharacter(QObject* parent, CharacterType typ
         return new CharacterStarkFuente(parent , CharacterStarkFuente::MollyStark);
     case CHARACTER_DOC_HOLYDAY:
         return new CharacterSidKetchum(parent , CharacterSidKetchum::DocHoliday);
+    case CHARACTER_TUCO:
+        return new CharacterBlackJack(parent , CharacterBlackJack::Tuco);
     case CHARACTER_UNKNOWN:
         NOT_REACHED();
     }

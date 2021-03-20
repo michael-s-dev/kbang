@@ -262,7 +262,7 @@ void Player::setRoleAndCharacter(const PlayerRole& role, CharacterBase* characte
     mp_character = character;
     mp_character->setPlayer(this);
     m_maxLifePoints = character->maxLifePoints();
-    if (m_role == ROLE_SHERIFF) {
+    if (m_role == ROLE_SHERIFF && this->characterType() != CHARACTER_TUCO) {
         m_maxLifePoints++;
     }
 

@@ -74,6 +74,7 @@ CharacterType stringToCharacterType(const QString& s)
     if (s == "doc holyday")     return CHARACTER_DOC_HOLYDAY;
     if (s == "apache kid")      return CHARACTER_APACHE_KID;
     if (s == "belle star")      return CHARACTER_BELLE_STAR;
+    if (s == "tuco")            return CHARACTER_TUCO;
     return CHARACTER_UNKNOWN;
 }
 
@@ -111,6 +112,7 @@ QString characterTypeToString(const CharacterType& t)
     case CHARACTER_DOC_HOLYDAY:     return "doc holyday";
     case CHARACTER_BELLE_STAR:      return "belle star";
     case CHARACTER_APACHE_KID:      return "apache kid";
+    case CHARACTER_TUCO:            return "tuco";
     }
     return "unknown";
 }
