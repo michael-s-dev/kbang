@@ -138,4 +138,5 @@ void CharacterList::initCharacterTypes()
         sm_characterTypes.append(CHARACTER_APACHE_KID);
         sm_characterTypes.append(CHARACTER_DOC_HOLYDAY);
         sm_characterTypes.append(CHARACTER_BELLE_STAR);
+        sm_characterTypes.append(CHARACTER_TUCO);
 }

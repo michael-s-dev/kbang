@@ -385,7 +385,7 @@ void Client::onParserTerminated()
         mp_playerCtrl->disconnect();
     }
     deleteLater();
-    qDebug() << "removing client with ip" + address() ;
+    qDebug() << "removing client with ip " + address() ;
 }
 
 void Client::onKeepAlive()
