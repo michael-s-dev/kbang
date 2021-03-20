@@ -91,6 +91,7 @@ public:
     inline int                  maxLifePoints()    const { return m_maxLifePoints;     }
     inline int                  initialCardCount() const { return m_maxLifePoints;     }
     inline int                  handSize()         const { return m_hand.size();       }
+    inline int                  unlimitedBangs()   const { return m_unlimitedBangs;    }
     inline CardList             hand()             const { return m_hand;              }
     inline CardList             table()            const { return m_table;             }
     inline CardList             selection()        const { return m_selection;         }
@@ -101,7 +102,7 @@ public:
     inline bool                 isWinner()         const { return m_isWinner;          }
     inline int                  weaponRange()      const { return m_weaponRange;       }
     inline bool                 hasController()    const { return mp_gameEventListener != 0; }
-    inline GameEventListener*    gameEventListener() const { return mp_gameEventListener; }
+    inline GameEventListener*   gameEventListener() const { return mp_gameEventListener; }
     inline int                  bangPower()        const { return m_bangPower;         }
     inline PublicPlayerView&    publicView()       const { return m_publicPlayerView;  }
     inline PrivatePlayerView&   privateView()      const { return m_privatePlayerView; }

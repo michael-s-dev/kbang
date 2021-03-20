@@ -91,13 +91,34 @@ void VoidAI::requestWithAction()
                                 return;
                              }
                             else{ break; }
-                        case CARD_APPALOSSA:
-                        case CARD_MUSTANG:
+                        // weapons --fiska
                         case CARD_VOLCANIC:
                         case CARD_SCHOFIELD:
                         case CARD_REMINGTON:
                         case CARD_CARABINE:
                         case CARD_WINCHESTER:
+                        case CARD_DEAGLE:
+                        {
+                        WeaponCard* weaponCard = qobject_cast<WeaponCard*>(card);
+
+
+                             if ( mp_playerCtrl->privatePlayerView().character() == CHARACTER_WILLY_THE_KID &&
+                                 card->type() == CARD_VOLCANIC ) {
+                                continue;
+                             }
+                             if ( mp_playerCtrl->publicPlayerView().unlimitedBangs()== 0
+                             && mp_playerCtrl->publicPlayerView().weaponRange() < weaponCard->getRange() ){
+                                    mp_playerCtrl->playCard(card);
+                                    return;
+                              }
+                              if (mp_playerCtrl->publicPlayerView().unlimitedBangs()== 1 && card->type() == CARD_DEAGLE ){
+                                 mp_playerCtrl->playCard(card);
+                                     return;
+                                  }
+                         break;
+                        }
+                        case CARD_APPALOSSA:
+                        case CARD_MUSTANG:
                         case CARD_DILIGENZA:
                         case CARD_WELLSFARGO:
                         case CARD_INDIANS:
@@ -118,7 +139,6 @@ void VoidAI::requestWithAction()
                         case CARD_PUGNALE:
                         case CARD_PEPPERBOX:
                         case CARD_HOWITZER:
-                        case CARD_DEAGLE:
                             mp_playerCtrl->playCard(card);
                             return;
                         case CARD_BEER:

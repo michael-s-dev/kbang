@@ -77,10 +77,20 @@ int PublicPlayerView::handSize() const
     return mp_player->handSize();
 }
 
+int PublicPlayerView::weaponRange() const
+{
+    return mp_player->weaponRange();   
+}
+
+int PublicPlayerView::unlimitedBangs() const
+{
+    return mp_player->unlimitedBangs();
+}
 CharacterType PublicPlayerView::character() const
 {
     return mp_player->characterType();
 }
+
 
 /**
  * Returns the role of the player. In case

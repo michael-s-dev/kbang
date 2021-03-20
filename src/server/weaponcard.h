@@ -45,6 +45,9 @@ public:
 
     virtual void play();
 
+    inline int              getRange()        const { return m_range;   }
+
+
     virtual void registerPlayer(Player* player);
     virtual void unregisterPlayer(Player* player);
 

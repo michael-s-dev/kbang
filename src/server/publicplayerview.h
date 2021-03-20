@@ -48,6 +48,8 @@ public:
     int                  lifePoints()        const;
     int                  maxLifePoints()     const;
     int                  handSize()          const;
+    int                  weaponRange()       const;
+    int                  unlimitedBangs()   const;
     CharacterType        character()         const;
     virtual PlayerRole   role()              const;
     QList<PlayingCard*>  table()             const;

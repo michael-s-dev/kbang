@@ -94,8 +94,6 @@ struct CardFactory::CardFactoryImp
         /////////////
        // WEAPONS //
       /////////////
-        list.append(new WeaponCard(game, id(), 1, SUIT_SPADES, 10));
-        list.append(new WeaponCard(game, id(), 1, SUIT_CLUBS,  10));
         list.append(new WeaponCard(game, id(), 2, SUIT_CLUBS,  11));
         list.append(new WeaponCard(game, id(), 2, SUIT_CLUBS,  12));
         list.append(new WeaponCard(game, id(), 2, SUIT_SPADES, 13));
@@ -104,7 +102,9 @@ struct CardFactory::CardFactoryImp
         list.append(new WeaponCard(game, id(), 4, SUIT_CLUBS,  14));
         list.append(new WeaponCard(game, id(), 4, SUIT_SPADES, 5));
         list.append(new WeaponCard(game, id(), 5, SUIT_SPADES, 8));
-        list.append(new WeaponCard(game, id(), 6, SUIT_SPADES, 7));
+        list.append(new WeaponCard(game, id(), 6, SUIT_CLUBS,  10));
+        list.append(new WeaponCard(game, id(), 6, SUIT_SPADES, 10));
+        list.append(new WeaponCard(game, id(), 7, SUIT_SPADES, 7));
 
         ////////////////
        // DRAW CARDS //

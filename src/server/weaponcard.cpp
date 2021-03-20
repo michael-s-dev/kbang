@@ -28,9 +28,6 @@ WeaponCard::WeaponCard(Game *game, int id, int range, CardSuit suit, CardRank ra
         m_range(range)
 {
     switch(m_range) {
-    case 1:
-        setType(CARD_VOLCANIC);
-        break;
     case 2:
         setType(CARD_SCHOFIELD);
         break;
@@ -44,6 +41,9 @@ WeaponCard::WeaponCard(Game *game, int id, int range, CardSuit suit, CardRank ra
         setType(CARD_WINCHESTER);
         break;
     case 6:
+        setType(CARD_VOLCANIC);
+        break;
+    case 7:
         setType(CARD_DEAGLE);
         break;
     }
@@ -74,18 +74,19 @@ void WeaponCard::play()
 
 void WeaponCard::registerPlayer(Player* player)
 {
-    if (m_range == 6 || m_range == 1)
+    if (m_range == 6 || m_range == 7)
     {
       player->modifyUnlimitedBangs(1);
     }
+    m_range == 6 ? player->setWeaponRange(1) : player->setWeaponRange(m_range);
+    if (m_range == 7 )  player->setWeaponRange(2) ;
 
-    m_range == 6 ? player->setWeaponRange(2) : player->setWeaponRange(m_range);
 }
 
 void WeaponCard::unregisterPlayer(Player* player)
 {
     player->setWeaponRange(1);
-    if (m_range == 1 || m_range == 6) {
+    if (m_range == 7 || m_range == 6) {
             player->modifyUnlimitedBangs(-1);
      }
 }

@@ -184,7 +184,10 @@ void MainWindow::keyPressEvent(QKeyEvent *ev)
             menubar->setVisible(true);
         }
     }
-    return;
+    if ( ev-> key () == Qt::Key_B ){
+        mp_game->serverConnection()->drawCard();
+    }
+        return;
 }
 
 
