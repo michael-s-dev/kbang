@@ -21,8 +21,9 @@
 #include "gametable.h"
 #include "game.h"
 #include "gameexceptions.h"
+#include "cards.h"
 
-PlayingCard::PlayingCard(Game *game, int id, PlayingCardType type, CardSuit suit, CardRank rank):
+PlayingCard::PlayingCard(Game *game, int id, PlayingCardType type, CardSuit suit, CardRank rank ):
         QObject(game),
         m_id(id),
         m_type(type),
@@ -144,4 +145,27 @@ void PlayingCard::setType(PlayingCardType type)
     m_type = type;
 }
 
+bool PlayingCard::isBlue()
+{
+    switch( this->type()){
+    case CARD_VOLCANIC:case CARD_SCHOFIELD:case CARD_REMINGTON:case CARD_CARABINE:
+    case CARD_WINCHESTER:case CARD_DEAGLE:case CARD_APPALOSSA: case CARD_BARREL: case CARD_DYNAMITE:
+    case CARD_JAIL:case CARD_MUSTANG:case CARD_RIPARO:
+        return true;
+    default:
+        return false;
+
+    }
+}
+
+bool PlayingCard::isBangCard() {
+
+    CardBang* bang = qobject_cast<CardBang*>(this);
+
+    if( bang != 0 || this->type() == CARD_DUEL )
+        return true;
+    else
+        return false;
+
+}
 

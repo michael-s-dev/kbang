@@ -161,7 +161,12 @@ Player* Game::createPlayer(const CreatePlayerData& createPlayerData, GameEventLi
     }
     Player* newPlayer = new Player(this, m_nextUnusedPlayerId, createPlayerData);
     m_playerMap[m_nextUnusedPlayerId] = newPlayer;
+
+    // for debug
+    if ( newPlayer->name() != "debug"){
     m_playerList.append(newPlayer);
+    }
+
     m_publicPlayerList.append(&newPlayer->publicView());
 
     // The first connected nonAI player is the creator and can start the game
@@ -430,19 +435,20 @@ void Game::setRolesAndCharacters()
 
 QList<PlayerRole> Game::getRoleList()
 {
-    static char* roleSets[] = {"", "S", "SB", "SRB", "SBBR", "SVBBR", "SVBBBR", "SVVBBBR"};
+    QStringList roleSets;
+    roleSets <<  "" << "S" << "SB" << "SRB" << "SBBR" << "SVBBR" << "SVBBBR" << "SVVBBBR";
     QList<PlayerRole> res;
-    char* i = roleSets[m_playerList.count()];
-    while(*i != '\0')
+    QString roles = roleSets[m_playerList.count()];
+    for (int i = 0; i < roles.size() ; i++)
     {
-        switch(*i)
+      QChar role = roles.at(i);
+        switch( role.unicode() )
         {
             case 'S': res.append(ROLE_SHERIFF); break;
             case 'B': res.append(ROLE_OUTLAW); break;
             case 'V': res.append(ROLE_DEPUTY); break;
             case 'R': res.append(ROLE_RENEGADE); break;
         }
-        ++i;
     }
     return res;
 }

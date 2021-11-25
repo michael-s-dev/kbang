@@ -154,5 +154,14 @@ public:
     }
 };
 
+class BadUsageAbilityAlreadyUsed: public GameException
+{
+public:
+    virtual void debug() {
+        qDebug("BadUsageAbilityAlreadyUsed");
+    }
+};
+
+
 
 #endif // GAMEEXCEPTIONS_H

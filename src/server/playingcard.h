@@ -81,6 +81,8 @@ public:
     virtual void play(PlayingCard* targetCard , PlayingCard* targetCard2);
     virtual void play(PlayingCard* targetCard , Player* targetPlayer);
 
+    bool isBlue();
+    bool isBangCard();
     void assertInHand() const;
     void assertOnTable() const;
     void greenReady() const;
@@ -89,6 +91,7 @@ public:
 
     void setVirtual(PlayingCard* master);
     void setVirtual(Player* owner, PocketType pocket);
+
 
 protected:
     Game*       game()      const { return mp_game; }

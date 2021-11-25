@@ -220,6 +220,9 @@ void GameCycle::playCard(Player* player, PlayingCard* card, PlayingCard* targetC
         throw BadCardException();
     }
 
+    if (!targetCard2->owner()->isAlive())
+        throw BadTargetPlayerException();
+
     if (isResponse())
         throw BadGameStateException();
 
@@ -236,6 +239,9 @@ void GameCycle::playCard(Player* player, PlayingCard* card, PlayingCard* targetC
     if (card->owner() !=  0 && card->owner() != player) {
         throw BadCardException();
     }
+
+    if (!targetPlayer->isAlive())
+        throw BadTargetPlayerException();
 
     if (isResponse())
         throw BadGameStateException();
@@ -259,6 +265,9 @@ void GameCycle::pass(Player* player)
 
 void GameCycle::useAbility(Player* player)
 {
+    if (!player->canUseAbility())
+        throw BadUsageAbilityAlreadyUsed();
+
     m_contextDirty = 0;
     player->character()->useAbility();
     sendRequest();
@@ -266,6 +275,9 @@ void GameCycle::useAbility(Player* player)
 
 void GameCycle::useAbility(Player* player, Player* targetPlayer)
 {
+    if (!player->canUseAbility())
+        throw BadUsageAbilityAlreadyUsed();
+
     m_contextDirty = 0;
     player->character()->useAbility(targetPlayer);
     sendRequest();
@@ -273,6 +285,9 @@ void GameCycle::useAbility(Player* player, Player* targetPlayer)
 
 void GameCycle::useAbility(Player* player, QList<PlayingCard*> cards)
 {
+    if (!player->canUseAbility())
+        throw BadUsageAbilityAlreadyUsed();
+
     m_contextDirty = 0;
     player->character()->useAbility(cards);
     sendRequest();
@@ -280,6 +295,9 @@ void GameCycle::useAbility(Player* player, QList<PlayingCard*> cards)
 
 void GameCycle::useAbility(Player* player, QList<PlayingCard*> cards , Player* targetPlayer)
 {
+    if (!player->canUseAbility())
+        throw BadUsageAbilityAlreadyUsed();
+
     m_contextDirty = 0;
     player->character()->useAbility(cards , targetPlayer);
     sendRequest();
