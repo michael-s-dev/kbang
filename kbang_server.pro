@@ -6,7 +6,7 @@ QT += network xml
 QT += widgets
 
 CONFIG += console
-CONFIG += release
+#CONFIG += release
 
 INCLUDEPATH += src/server src/common
 DEPENDPATH += src/common

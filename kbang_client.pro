@@ -14,6 +14,8 @@ INCLUDEPATH += src/client \
 DEPENDPATH += src/common
 QT += widgets
 QT += multimedia
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4): DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x000000
 
 # Input
 HEADERS += src/client/gameloop.h \
@@ -123,6 +125,7 @@ win32 {
     debug:LIBPATH += debug/lib
     release:LIBPATH += release/lib
 }
-LIBS += -lkbang_common
+#LIBS += -lkbang_common
+LIBS += -L/$$PWD/lib -lkbang_common
 TARGET = kbang-client
 QMAKE_CXXFLAGS_DEBUG += -Wall
