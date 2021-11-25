@@ -32,6 +32,7 @@
 #include <QtDebug>
 #include <QBoxLayout>
 #include <QSound>
+#include <QAbstractAnimation>
 
 using namespace client;
 
@@ -183,6 +184,8 @@ void Game::setGameContext(const GameContextData& gameContextData)
     } else if (gamePlayState() == GAMEPLAYSTATE_DRAW) {
         QSound::play(Config::dataPathString() + "sounds/cockgun.wav");
         setTextInfo(tr("It's your turn. Good luck!"));
+        mp_deck->setStyleSheet("border: 2px solid lightblue");
+
     } else if (gamePlayState() == GAMEPLAYSTATE_DISCARD) {
         setTextInfo(tr("You need to discard some cards!"));
     } else{

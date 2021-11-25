@@ -122,7 +122,12 @@ void CardBang::play(Player *targetPlayer)
         gameTable()->playerDrawFromDeck( mp_attackingPlayer , 1);
     m_usedBarrels.clear();
     mp_attackedPlayer = targetPlayer;
-    m_missedLeft = mp_attackingPlayer->bangPower();
+
+    //bang power for bang card only
+    if ( m_bangType == bang )m_missedLeft = mp_attackingPlayer->bangPower();
+    else m_missedLeft = 1;
+
+
     game()->gameCycle().setResponseMode(this, targetPlayer);
 
 }
