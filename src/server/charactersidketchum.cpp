@@ -61,6 +61,12 @@ void CharacterSidKetchum::useAbility(QList<PlayingCard*> cards)
         throw BadCardException();
 
 
+    foreach (PlayingCard* card, cards) {
+        if (card->owner() != mp_player ||
+            card->pocket() != POCKET_HAND)
+            throw BadCardException();
+    }
+
     if (gameCycle().gamePlayState() == GAMEPLAYSTATE_TURN &&
         gameCycle().currentPlayer() == mp_player) {
         notifyAbilityUse();
