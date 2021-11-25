@@ -54,10 +54,20 @@ public:
 
     virtual void onActionRequest(ActionRequestType);
 
+
+
 public slots:
     void requestWithAction();
 
 private:
+    int alivePlayersCount();
+    int lowHpPlayersCount();
+    int getSheriffLifePoints();
+    int aliveDeputyCount();
+    PublicPlayerView* getSheriff();
+    QList<PublicPlayerView*> getPlayersList( bool alive = true );
+    QList<PlayingCard*> getSelectionCards(QList<PlayingCard*> cards);
+
     static int sm_playerCounter;
     int         m_id;
     PlayerCtrl* mp_playerCtrl;

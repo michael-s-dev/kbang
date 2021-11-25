@@ -163,7 +163,7 @@ void CardMultiShoot::respondCard(PlayingCard* targetCard)
 
 void CardMultiShoot::checkResult(bool result)
 {
-    Q_ASSERT(m_type == Gatling);
+    Q_ASSERT(m_type == Gatling || m_type == Howitzer);
     if (result) {
         game()->gameCycle().unsetResponseMode();
         requestNext();

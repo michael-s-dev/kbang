@@ -100,13 +100,14 @@ public:
     CharacterType               characterType()    const;
     inline bool                 isAlive()          const { return m_isAlive;           }
     inline bool                 isWinner()         const { return m_isWinner;          }
+    inline bool                 ignoreTableCards() const { return m_ignoreTableCards;  }
     inline int                  weaponRange()      const { return m_weaponRange;       }
     inline bool                 hasController()    const { return mp_gameEventListener != 0; }
     inline GameEventListener*   gameEventListener() const { return mp_gameEventListener; }
     inline int                  bangPower()        const { return m_bangPower;         }
+    inline int                  attacksOnSheriff() const { return m_attacksOnSheriff;  }
     inline PublicPlayerView&    publicView()       const { return m_publicPlayerView;  }
     inline PrivatePlayerView&   privateView()      const { return m_privatePlayerView; }
-    inline bool                 ignoreTableCards() const { return m_ignoreTableCards;  }
     bool                        isAI()             const;
     bool                        isPublicRole()     const;
 
@@ -219,6 +220,7 @@ public:
      */
     void onBangPlayed();
     void onAbilityUsed();
+    void onSheriffAttack();
 
 
 
@@ -273,6 +275,7 @@ private:
     int                       m_unlimitedBangs;
     int                       m_lastAbilityTurn;
     int                       m_bangPower;
+    int                       m_attacksOnSheriff;
     int                       m_currentPredraw;
 
     QList<int>                m_predrawChecks;

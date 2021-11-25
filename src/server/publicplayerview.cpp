@@ -86,6 +86,12 @@ int PublicPlayerView::unlimitedBangs() const
 {
     return mp_player->unlimitedBangs();
 }
+
+int PublicPlayerView::attacksOnSheriff() const
+{
+    return mp_player->attacksOnSheriff();
+}
+
 CharacterType PublicPlayerView::character() const
 {
     return mp_player->characterType();

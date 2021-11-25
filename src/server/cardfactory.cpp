@@ -144,9 +144,6 @@ struct CardFactory::CardFactoryImp
         list.append(new CardJail(game, id(), SUIT_SPADES, 11));
         list.append(new CardJail(game, id(), SUIT_HEARTS, 4));
 
-//        for (int i = 0; i <= 20; ++i) {
-//        list.append(new CardJail(game, id(), SUIT_DIAMONDS, 4));
-//        }
 
         list.append(new CardDynamite(game, id(), SUIT_HEARTS, 2));
         list.append(new CardDynamite(game, id(), SUIT_CLUBS, 10));
@@ -160,6 +157,7 @@ struct CardFactory::CardFactoryImp
         list.append(new CardTaker(game, id(), CardTaker::RagTime, SUIT_HEARTS,   9));
         list.append(new CardTaker(game, id(), CardTaker::Gift, SUIT_SPADES,   14));
         list.append(new CardTaker(game, id(), CardTaker::Gift, SUIT_SPADES,   13));
+
 
 
         list.append(new CardTaker(game, id(), CardTaker::CatBalou, SUIT_DIAMONDS, 9 ));

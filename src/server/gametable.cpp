@@ -10,6 +10,7 @@
 #include "checkdeckresulthandler.h"
 
 
+
 GameTable::GameTable(Game* game):
         mp_game(game)
 {
@@ -71,7 +72,7 @@ void GameTable::playerPlayCard(PlayingCard* card)
 {
     if (card->isVirtual())
         card = card->master();
-    Q_ASSERT(card->pocket() == POCKET_HAND);
+    Q_ASSERT(card->pocket() == POCKET_HAND || card->pocket() == POCKET_TABLE);
     Player* owner = card->owner();
     PocketType pocket = card->pocket();
     moveCardToGraveyard(card);
@@ -85,9 +86,14 @@ void GameTable::playerPlayCard(PlayingCard* card, Player* targetPlayer)
     card->isVirtual() ? v_card = true : v_card = false ;
     if (v_card) card = card->master();
 
-    Q_ASSERT(card->pocket() == POCKET_HAND);
+    Q_ASSERT(card->pocket() == POCKET_HAND || card->pocket() == POCKET_TABLE);
     Player* owner = card->owner();
     PocketType pocket = card->pocket();
+
+    // attacks to sheriff counter
+    if ( targetPlayer->publicView().isSheriff() && card->isBangCard())
+       owner->onSheriffAttack();
+
     moveCardToGraveyard(card);
     if (v_card)
         mp_game->gameEventManager().onPlayerDiscardCard(owner, card, pocket);
@@ -100,8 +106,10 @@ void GameTable::playerPlayCard(PlayingCard* card, PlayingCard* targetCard)
 {
     if (card->isVirtual())
         card = card->master();
-    Q_ASSERT(card->pocket() == POCKET_HAND);
+
+    Q_ASSERT(card->pocket() == POCKET_HAND || card->pocket() == POCKET_TABLE);
     Q_ASSERT(!targetCard->isVirtual());
+
     Player* owner = card->owner();
     PocketType pocket = card->pocket();
     moveCardToGraveyard(card);

@@ -49,7 +49,8 @@ public:
     int                  maxLifePoints()     const;
     int                  handSize()          const;
     int                  weaponRange()       const;
-    int                  unlimitedBangs()   const;
+    int                  unlimitedBangs()    const;
+    int                  attacksOnSheriff()  const;
     CharacterType        character()         const;
     virtual PlayerRole   role()              const;
     QList<PlayingCard*>  table()             const;

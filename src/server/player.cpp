@@ -40,6 +40,7 @@ Player::Player(Game* game, int id, const CreatePlayerData& createPlayerData):
         mp_character(0),
         m_isAlive(1),
         m_isWinner(0),
+        m_ignoreTableCards(false),
         mp_game(game),
         mp_gameEventListener(0),
         m_weaponRange(1),
@@ -48,7 +49,7 @@ Player::Player(Game* game, int id, const CreatePlayerData& createPlayerData):
         m_lastBangTurn(-1),
         m_unlimitedBangs(0),
         m_bangPower(1),
-        m_ignoreTableCards(false),
+        m_attacksOnSheriff(0),
         m_publicPlayerView(this),
         m_privatePlayerView(this)
 {
@@ -307,6 +308,13 @@ void Player::onAbilityUsed()
 {
     m_lastAbilityTurn = mp_game->gameCycle().turnNumber();
 }
+
+
+void Player::onSheriffAttack()
+{
+    m_attacksOnSheriff++;
+}
+
 
 void Player::onTurnStart()
 {
