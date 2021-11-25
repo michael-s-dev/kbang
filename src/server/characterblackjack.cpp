@@ -57,18 +57,13 @@ void CharacterBlackJack::draw(bool)
 
        QList<PlayingCard*> cards = mp_player->table();
 
-       bool bluecard = false ;
+       bool blueCardonTable = false ;
        foreach (PlayingCard* card, cards)
        {
-       if (card->type() == CARD_APPALOSSA || card->type() == CARD_BARREL ||
-               card->type() == CARD_DYNAMITE || card->type() == CARD_JAIL|| card->type() == CARD_MUSTANG || card->type() == CARD_VOLCANIC ||
-               card->type() == CARD_REMINGTON || card->type() == CARD_CARABINE ||
-               card->type() == CARD_WINCHESTER || card->type() == CARD_SCHOFIELD || card->type() == CARD_DEAGLE || card->type() == CARD_RIPARO)
-
-           bluecard = true ;
-
-      }
-       if (bluecard == true)
+        if ( card->isBlue() )
+           blueCardonTable = true ;
+         }
+       if (blueCardonTable == true)
          gameTable().playerDrawFromDeck(mp_player, 2, 0);
         else
          gameTable().playerDrawFromDeck(mp_player, 4, 0);

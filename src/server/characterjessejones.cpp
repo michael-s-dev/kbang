@@ -18,16 +18,22 @@ CharacterJesseJones::CharacterJesseJones(QObject *parent , Type type):
 
 void CharacterJesseJones::useAbility(Player* targetPlayer )
 {
-    mp_targetPlayer = targetPlayer;
+    mp_targetCard = targetPlayer->getRandomCardFromHand();
+    if (mp_targetCard == 0)
+        throw BadTargetPlayerException();
     gameCycle().draw(mp_player, 1);
 }
 
 void CharacterJesseJones::useAbility(QList<PlayingCard*> cards)
 {
-    if (cards.size() != 1)  // Avoid server crash if invalid card selected
-        throw BadCardException();
-
     mp_targetCard = cards[0];
+    // Avoid server crash if invalid card selected
+    if (cards.size() != 1)
+        throw BadCardException();
+    // Check pocket
+    if ( mp_targetCard->pocket() != POCKET_TABLE)
+        throw BadTargetCardException();
+
     gameCycle().draw(mp_player, 1);
 }
 
@@ -35,16 +41,11 @@ void CharacterJesseJones::draw(bool specialDraw)
 {
     if (specialDraw) {
         if (m_type == JesseJones) {
-            PlayingCard* targetCard = mp_targetPlayer->getRandomCardFromHand();
-            if (targetCard == 0)
-                throw BadTargetPlayerException();
             notifyAbilityUse();
-            gameTable().playerStealCard(mp_player, targetCard);
+            gameTable().playerStealCard(mp_player, mp_targetCard);
             gameTable().playerDrawFromDeck(mp_player, 1, 0);
         }
         else if (m_type == PatBrennan){
-            if ( mp_targetCard->pocket() != POCKET_TABLE)
-                throw BadTargetCardException();
             notifyAbilityUse();
             gameTable().playerStealCard(mp_player, mp_targetCard);
         }
