@@ -29,7 +29,9 @@ VoidAI::VoidAI(QObject* parent):
 
 CreatePlayerData VoidAI::createPlayerData() const
 {
-    BotName << "Mr.Nobody" << "Bot" << "Smart Bot" << "Bot John" << "Mr.Unknown" << "Dumb Bot" << "Bot Lerry";
+    //BotName << "Mr.Nobody" << "Bot" << "Smart Bot" << "Bot John" << "Mr.Unknown" << "Dumb Bot" << "Bot Lerry";
+    //Vianoce
+    BotName << "Santa Claus" << "Rudolf" << "sobík" << "elf" << "pani Clausová";
     shuffleList(BotName);
     CreatePlayerData res;
     res.name = QString("%1 #%2").arg(BotName.first()).arg(m_id);
@@ -356,11 +358,14 @@ void VoidAI::requestWithAction()
                     QList<PlayingCard*> gifts ;
 
                     foreach( PublicPlayerView* player , players ){
-                        if ( !player->table().isEmpty()){
+                         if ( !player->table().isEmpty()){
                             gifts = player->table();
                             break;
                         }
                     }
+                    gifts = gifts + mp_playerCtrl->privatePlayerView().hand();
+                    shuffleList(gifts);
+
                     if ( !gifts.isEmpty()) {
                         while ( players.first()->id() == mp_playerCtrl->publicPlayerView().id() ||
                                 players.first()->id() == gifts.first()->owner()->id() ){

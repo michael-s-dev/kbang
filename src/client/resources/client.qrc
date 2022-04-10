@@ -1,9 +1,10 @@
 <RCC>
-    <qresource prefix="/misc" >
+    <qresource prefix="/misc">
         <file>sheriff-badge.png</file>
         <file>winner-sign.png</file>
+        <file>xmas-hat.png</file>
     </qresource>
-    <qresource prefix="/icons" >
+    <qresource prefix="/icons">
         <file>connect.png</file>
         <file>disconnect.png</file>
         <file>ai.png</file>
@@ -18,7 +19,7 @@
         <file>pass.png</file>
         <file>kbang.ico</file>
     </qresource>
-    <qresource prefix="/flags" >
+    <qresource prefix="/flags">
         <file>flags/zh-TW.png</file>
         <file>flags/zh-CN.png</file>
         <file>flags/vi.png</file>

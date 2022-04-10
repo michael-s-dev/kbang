@@ -57,12 +57,19 @@ MainWindow::MainWindow():
     Config& cfg = Config::instance();
     cfg.refresh();
 
+    //christmas background
     if ( cfg.readString("game","bgimage") != "Classic"){
         setStyleSheet(styleSheet() + "\n"
             "#mp_centralWidget {\n"
-            "   border-image: url(\"" + Config::dataPathString() + "gfx/misc/background.jpg\")0 0 0 0 stretch stretch;\n"
+            "   border-image: url(\"" + Config::dataPathString() + "gfx/misc/winter.jpg\")0 0 0 0 stretch stretch;\n"
             "}\n\n");
     }
+//    else if ( cfg.readString("game","bgimage") != "Classic"){
+//        setStyleSheet(styleSheet() + "\n"
+//            "#mp_centralWidget {\n"
+//            "   border-image: url(\"" + Config::dataPathString() + "gfx/misc/background.jpg\")0 0 0 0 stretch stretch;\n"
+//            "}\n\n");
+//    }
 
     Card::loadDefaultRuleset();
     mp_cardWidgetSizeManager = new CardWidgetSizeManager(this);
@@ -236,6 +243,7 @@ void MainWindow::enterGameMode(int gameId, const QString& gameName, ClientType c
             mp_logWidget, SLOT(appendLogMessage(const QString&)));
     mp_logWidget->appendLogMessage(tr("You have joined <i>%1</i>.").arg(gameName));
     updateActions();
+    checkForUpdates();
 }
 
 void MainWindow::exitGameMode()

@@ -33,12 +33,16 @@ void CardDynamite::play()
 
 void CardDynamite::checkResult(bool result)
 {
+    Player* hracCoHraTeraz = owner();
+    gameTable()->passTableCard(this, game()->nextPlayer(owner())); // Vianoce
+
     if (result) { // luck
-        gameTable()->passTableCard(this, game()->nextPlayer(owner()));
+        //gameTable()->passTableCard(this, game()->nextPlayer(owner()));
     } else {
-        Player* player = owner();
-        gameTable()->playerDiscardCard(this);
-        player->modifyLifePoints(-3, 0);
+        //Player* player = owner();
+        //gameTable()->playerDiscardCard(this);
+        //player->modifyLifePoints(-3, 0);
+        gameTable()->playerDrawFromDeck(hracCoHraTeraz, 3); // Vianoce
     }
 }
 
@@ -56,5 +60,5 @@ void CardDynamite::unregisterPlayer(Player* player)
 
 bool CardDynamite::checkDynamite(PlayingCard* card)
 {
-    return  (card->suit() != SUIT_SPADES || card->rank() > 9);
+   return  (card->suit() != SUIT_SPADES || card->rank() > 9);
 }

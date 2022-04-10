@@ -57,9 +57,11 @@ void CardTaker::play( PlayingCard* targetCard , Player* targetPlayer ){
       if (targetPlayer->hasIdenticalCardOnTable(targetCard)) {
           throw TwoSameOnTableException();
       }
-      if (targetCard->pocket() != POCKET_TABLE) {
-          throw BadCardException();
-      }
+//      Vianoce
+//      if (targetCard->pocket() != POCKET_TABLE) {
+//          throw BadCardException();
+//      }
+
       // Play the card
       gameTable()->playerPlayCard(this, targetCard);
 
@@ -75,9 +77,12 @@ void CardTaker::play( PlayingCard* targetCard , Player* targetPlayer ){
         }
       }
       // Move target card to the player
+      //Vianoce
+      if (targetCard->pocket() == POCKET_TABLE)
       gameTable()->passTableCard(targetCard , targetPlayer);
-
-
+      else if (targetCard->pocket() == POCKET_HAND)
+      gameTable()->playerStealCard(targetPlayer , targetCard);
+      else throw BadCardException();
 
     }
     else{

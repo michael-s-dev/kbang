@@ -136,7 +136,8 @@ void Card::loadDefaultRuleset()
     new Card("Appaloosa",   CARD_APPALOSSA,   "gfx/cards/appaloosa.png");
     new Card("Riparo",      CARD_RIPARO,      "gfx/cards/riparo.png");
     new Card("Barile",      CARD_BARREL,      "gfx/cards/barrel.png");
-    new Card("Dinamite",    CARD_DYNAMITE,    "gfx/cards/dynamite.png");
+   // new Card("Dinamite",  CARD_DYNAMITE,    "gfx/cards/dynamite.png");
+    new Card("Dinamite",    CARD_DYNAMITE,    "gfx/cards/surprise.png");
     new Card("Prigione",    CARD_JAIL,        "gfx/cards/jail.png");
     new Card("Volcanic",    CARD_VOLCANIC,    "gfx/cards/volcanic.png");
     new Card("Schofield",   CARD_SCHOFIELD,   "gfx/cards/schofield.png");
@@ -165,7 +166,9 @@ void Card::loadDefaultRuleset()
     new Card("Whisky",      CARD_WHISKY,       "gfx/cards/whisky.png");
     new Card("Gift",        CARD_GIFT,         "gfx/cards/gift.png");
 
-    new Card("",            CARD_UNKNOWN,     "gfx/cards/back-playing.png");
+    //new Card("",            CARD_UNKNOWN,     "gfx/cards/back-playing.png");
+    //Vianoce
+    new Card("",            CARD_UNKNOWN,     "gfx/cards/rub_kariet_vianoce.png");
 
     new Card("Bart Cassidy",    CHARACTER_BART_CASSIDY,     "gfx/characters/bart-cassidy.png");
     new Card("Black Jack",      CHARACTER_BLACK_JACK,       "gfx/characters/black-jack.png");
@@ -198,8 +201,9 @@ void Card::loadDefaultRuleset()
     new Card("Apache Kid",      CHARACTER_APACHE_KID,       "gfx/characters/apache-kid.png");
     new Card("Belle Star",      CHARACTER_BELLE_STAR,       "gfx/characters/belle-star.png");
     new Card("Tuco",            CHARACTER_TUCO,             "gfx/characters/tuco.png");
-    new Card("",                CHARACTER_UNKNOWN,          "gfx/characters/back-character.png");
-
+    //new Card("",                CHARACTER_UNKNOWN,          "gfx/characters/back-character.png");
+    //Vianoce
+    new Card("",                CHARACTER_UNKNOWN,          "gfx/cards/zivoty_bg_vianoce.png");
 
     new Card("Sheriff",  ROLE_SHERIFF,  "gfx/roles/sheriff.png");
     new Card("Renegade", ROLE_RENEGADE, "gfx/roles/renegade.png");

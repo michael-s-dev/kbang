@@ -34,13 +34,25 @@ void GameMessageEvent::run()
     //Get music name from config
     Config& cfg = Config::instance();
     cfg.refresh();
-    QString music = cfg.readString("game" , "music") + ".wav";
-
+    //Vianoce
+    QList<QString>  songs ;
+    songs << "jingle_bells"<<"let_it_snow_cut"<< "wish_you _xmas_cut"<<"hippo_cut"<< "kevin_cut"<<"navidad_cut" ;
+    //QString music = cfg.readString("game" , "music") + ".wav";
+    QString hudbiska = songs[qrand() % 6];
+    QMediaPlayer * super_prehravac = new QMediaPlayer;
 
     switch(m_gameMessage.type) {
     case GAMEMESSAGE_GAMESTARTED:
         mp_game->setGameState(GAMESTATE_PLAYING);
-        QSound::play(Config::dataPathString() + "sounds/" + music);
+        //Vianoce
+        //QSound::play(Config::dataPathString() + "sounds/" + music);
+       // QSound::play(Config::dataPathString() + "sounds/" + hudbiska);
+
+
+
+        super_prehravac->setMedia(QUrl::fromLocalFile(Config::dataPathString() + "sounds/" + hudbiska + ".mp3"));
+        super_prehravac->setVolume(50);
+        super_prehravac->play();
         msg = tr("The game has just started.");
         break;
     case GAMEMESSAGE_GAMEFINISHED:
@@ -134,7 +146,9 @@ void GameMessageEvent::run()
         else {
             msg += tr("failed.");
             if(QString(cardToString(m_gameMessage.card)).contains("Dinamite"))
-                QSound::play(Config::dataPathString() + "sounds/dynamite.wav");
+               // QSound::play(Config::dataPathString() + "sounds/dynamite.wav");
+               // Vianoce
+               QSound::play(Config::dataPathString() + "sounds/merry_christmas.wav");
         }
         break;
     case GAMEMESSAGE_PLAYERSTEALCARD:

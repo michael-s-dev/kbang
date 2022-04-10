@@ -56,12 +56,15 @@ protected:
 private:
     void createSheriffBadgeIcon();
     void updateSheriffBadgeIcon();
+    void createSantaHat(); // Vianoce
+    void updateSantaHatIcon(); // Vianoce
     void createRoleCard();
     void updateRoleCard();
     void createDisconnectIcon();
     void updateDisconnectIcon();
 
     QLabel*     mp_sheriffBadge;
+    QLabel*     mp_santaHat; // Vianoce
     QLabel*     mp_disconnectIcon;
     CardWidget* mp_roleCard;
 
