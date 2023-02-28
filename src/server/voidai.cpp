@@ -14,8 +14,8 @@
 
 int VoidAI::sm_playerCounter = 0;
 
-int minActionDelay = 1550;
-int maxActionDelay = 2500;
+int minActionDelay = 850;
+int maxActionDelay = 1400;
 QList<QString> BotName ;
 
 
@@ -29,9 +29,11 @@ VoidAI::VoidAI(QObject* parent):
 
 CreatePlayerData VoidAI::createPlayerData() const
 {
-    //BotName << "Mr.Nobody" << "Bot" << "Smart Bot" << "Bot John" << "Mr.Unknown" << "Dumb Bot" << "Bot Lerry";
+    int month =  QDate::currentDate().month();
     //Vianoce
-    BotName << "Santa Claus" << "Rudolf" << "sobík" << "elf" << "pani Clausová";
+    if( month == 12 ) BotName << "Santa Claus" << "Rudolf" << "sobík" << "elf" << "pani Clausová";
+    else BotName << "Mr.Nobody" << "Bot" << "Smart Bot" << "Bot John" << "Mr.Unknown" << "Dumb Bot" << "Bot Lerry";
+
     shuffleList(BotName);
     CreatePlayerData res;
     res.name = QString("%1 #%2").arg(BotName.first()).arg(m_id);

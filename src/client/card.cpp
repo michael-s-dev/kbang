@@ -120,6 +120,9 @@ QPixmap Card::image(const CardSuit& suit, const CardRank& rank) const
 
 void Card::loadDefaultRuleset()
 {
+    //Vianoce
+    int month =  QDate::currentDate().month();
+
     new Card("Bang!",       CARD_BANG,        "gfx/cards/bang.png" , "gfx/cards/bang-2.png");
     new Card("Mancato",     CARD_MISSED,      "gfx/cards/missed.png");
     new Card("Birra",       CARD_BEER,        "gfx/cards/beer.png");
@@ -136,8 +139,8 @@ void Card::loadDefaultRuleset()
     new Card("Appaloosa",   CARD_APPALOSSA,   "gfx/cards/appaloosa.png");
     new Card("Riparo",      CARD_RIPARO,      "gfx/cards/riparo.png");
     new Card("Barile",      CARD_BARREL,      "gfx/cards/barrel.png");
-   // new Card("Dinamite",  CARD_DYNAMITE,    "gfx/cards/dynamite.png");
-    new Card("Dinamite",    CARD_DYNAMITE,    "gfx/cards/surprise.png");
+    if( month == 12 ) new Card("Dinamite",    CARD_DYNAMITE,    "gfx/cards/surprise.png");
+    else new Card("Dinamite",  CARD_DYNAMITE,    "gfx/cards/dynamite.png");
     new Card("Prigione",    CARD_JAIL,        "gfx/cards/jail.png");
     new Card("Volcanic",    CARD_VOLCANIC,    "gfx/cards/volcanic.png");
     new Card("Schofield",   CARD_SCHOFIELD,   "gfx/cards/schofield.png");
@@ -166,9 +169,8 @@ void Card::loadDefaultRuleset()
     new Card("Whisky",      CARD_WHISKY,       "gfx/cards/whisky.png");
     new Card("Gift",        CARD_GIFT,         "gfx/cards/gift.png");
 
-    //new Card("",            CARD_UNKNOWN,     "gfx/cards/back-playing.png");
-    //Vianoce
-    new Card("",            CARD_UNKNOWN,     "gfx/cards/rub_kariet_vianoce.png");
+    if( month == 12 ) new Card("",            CARD_UNKNOWN,     "gfx/cards/rub_kariet_vianoce.png");
+    else new Card("",            CARD_UNKNOWN,     "gfx/cards/back-playing.png");
 
     new Card("Bart Cassidy",    CHARACTER_BART_CASSIDY,     "gfx/characters/bart-cassidy.png");
     new Card("Black Jack",      CHARACTER_BLACK_JACK,       "gfx/characters/black-jack.png");
@@ -201,9 +203,9 @@ void Card::loadDefaultRuleset()
     new Card("Apache Kid",      CHARACTER_APACHE_KID,       "gfx/characters/apache-kid.png");
     new Card("Belle Star",      CHARACTER_BELLE_STAR,       "gfx/characters/belle-star.png");
     new Card("Tuco",            CHARACTER_TUCO,             "gfx/characters/tuco.png");
-    //new Card("",                CHARACTER_UNKNOWN,          "gfx/characters/back-character.png");
-    //Vianoce
-    new Card("",                CHARACTER_UNKNOWN,          "gfx/cards/zivoty_bg_vianoce.png");
+
+    if( month == 12 ) new Card("",                CHARACTER_UNKNOWN,          "gfx/cards/zivoty_bg_vianoce.png");
+    else  new Card("",                CHARACTER_UNKNOWN,          "gfx/characters/back-character.png");
 
     new Card("Sheriff",  ROLE_SHERIFF,  "gfx/roles/sheriff.png");
     new Card("Renegade", ROLE_RENEGADE, "gfx/roles/renegade.png");

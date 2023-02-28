@@ -112,25 +112,33 @@ void OpponentWidget::updateSheriffBadgeIcon()
     }
 }
 
-// Vianoce
+
+
 void OpponentWidget::createSantaHat()
 {
-    QPixmap santaHat(":/misc/xmas-hat.png");
-    QMatrix rm;
-    rm.rotate(45);
-    santaHat = santaHat.transformed(rm);
-    mp_santaHat = new QLabel(this);
-    mp_santaHat->setPixmap(santaHat.scaled(48, 48, Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
-    mp_santaHat->resize(48, 48);
+    int month =  QDate::currentDate().month();
+    if( month == 12 ) {
+        QPixmap santaHat(":/misc/xmas-hat.png");
+        QMatrix rm;
+        rm.rotate(45);
+        santaHat = santaHat.transformed(rm);
+        mp_santaHat = new QLabel(this);
+        mp_santaHat->setPixmap(santaHat.scaled(48, 48, Qt::IgnoreAspectRatio, Qt::SmoothTransformation));
+        mp_santaHat->resize(48, 48);
 
-     mp_santaHat->setToolTip(tr("Merry Christmas."));
+         mp_santaHat->setToolTip(tr("Merry Christmas."));
+    }
 }
+
 
 void OpponentWidget::updateSantaHatIcon()
 {
+    int month =  QDate::currentDate().month();
+    if( month == 12 ) {
         createSantaHat();
         mp_santaHat->move(mp_labelAvatar->width() -  mp_santaHat->width() / 2 + 5 , -5);
         mp_santaHat->show();
+    }
 }
 // Vianoce Konec
 

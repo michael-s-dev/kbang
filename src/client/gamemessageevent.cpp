@@ -37,22 +37,18 @@ void GameMessageEvent::run()
     //Vianoce
     QList<QString>  songs ;
     songs << "jingle_bells"<<"let_it_snow_cut"<< "wish_you _xmas_cut"<<"hippo_cut"<< "kevin_cut"<<"navidad_cut" ;
-    //QString music = cfg.readString("game" , "music") + ".wav";
-    QString hudbiska = songs[qrand() % 6];
-    QMediaPlayer * super_prehravac = new QMediaPlayer;
+    int month =  QDate::currentDate().month();
+    QString song = cfg.readString("game" , "music") + ".wav";
+    if( month == 12 ) song = songs[qrand() % 6] + ".mp3";
+
+    QMediaPlayer* mediaPlayer = new QMediaPlayer;
 
     switch(m_gameMessage.type) {
     case GAMEMESSAGE_GAMESTARTED:
         mp_game->setGameState(GAMESTATE_PLAYING);
-        //Vianoce
-        //QSound::play(Config::dataPathString() + "sounds/" + music);
-       // QSound::play(Config::dataPathString() + "sounds/" + hudbiska);
-
-
-
-        super_prehravac->setMedia(QUrl::fromLocalFile(Config::dataPathString() + "sounds/" + hudbiska + ".mp3"));
-        super_prehravac->setVolume(50);
-        super_prehravac->play();
+        mediaPlayer->setMedia(QUrl::fromLocalFile(Config::dataPathString() + "sounds/" + song ));
+        mediaPlayer->setVolume(60);
+        mediaPlayer->play();
         msg = tr("The game has just started.");
         break;
     case GAMEMESSAGE_GAMEFINISHED:

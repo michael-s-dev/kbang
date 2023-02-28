@@ -57,19 +57,16 @@ MainWindow::MainWindow():
     Config& cfg = Config::instance();
     cfg.refresh();
 
-    //christmas background
+    int month =  QDate::currentDate().month();
+    QString imgPath = "gfx/misc/background.jpg";
+    if( month == 12 ) imgPath = "gfx/misc/winter.jpg";
+
     if ( cfg.readString("game","bgimage") != "Classic"){
         setStyleSheet(styleSheet() + "\n"
-            "#mp_centralWidget {\n"
-            "   border-image: url(\"" + Config::dataPathString() + "gfx/misc/winter.jpg\")0 0 0 0 stretch stretch;\n"
-            "}\n\n");
-    }
-//    else if ( cfg.readString("game","bgimage") != "Classic"){
-//        setStyleSheet(styleSheet() + "\n"
-//            "#mp_centralWidget {\n"
-//            "   border-image: url(\"" + Config::dataPathString() + "gfx/misc/background.jpg\")0 0 0 0 stretch stretch;\n"
-//            "}\n\n");
-//    }
+                   "#mp_centralWidget {\n"
+                   "   border-image: url(\"" + Config::dataPathString() + imgPath + "\")0 0 0 0 stretch stretch;\n"
+                   "}\n\n");
+           }
 
     Card::loadDefaultRuleset();
     mp_cardWidgetSizeManager = new CardWidgetSizeManager(this);

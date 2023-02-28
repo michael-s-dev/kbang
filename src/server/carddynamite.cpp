@@ -5,6 +5,8 @@
 #include "game.h"
 #include "player.h"
 
+#include <QDate>
+
 CardDynamite::CardDynamite(Game *game, int id, CardSuit suit, CardRank rank):
        PlayingCard(game, id, CARD_DYNAMITE, suit, rank)
 {
@@ -33,16 +35,23 @@ void CardDynamite::play()
 
 void CardDynamite::checkResult(bool result)
 {
-    Player* hracCoHraTeraz = owner();
-    gameTable()->passTableCard(this, game()->nextPlayer(owner())); // Vianoce
+    Player* player = owner();
+
 
     if (result) { // luck
-        //gameTable()->passTableCard(this, game()->nextPlayer(owner()));
+        gameTable()->passTableCard(this, game()->nextPlayer(owner()));
     } else {
-        //Player* player = owner();
-        //gameTable()->playerDiscardCard(this);
-        //player->modifyLifePoints(-3, 0);
-        gameTable()->playerDrawFromDeck(hracCoHraTeraz, 3); // Vianoce
+        int month =  QDate::currentDate().month();
+        //Vianoce
+        if( month == 12 ) {
+             gameTable()->playerDrawFromDeck(player, 3);
+            gameTable()->passTableCard(this, game()->nextPlayer(owner()));
+        }
+        else{
+        gameTable()->playerDiscardCard(this);
+        player->modifyLifePoints(-3, 0);
+        }
+
     }
 }
 
